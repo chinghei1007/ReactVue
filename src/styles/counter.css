@@ -1,0 +1,16 @@
+.counter-page {
+  display: grid;
+  gap: 1rem;
+}
+
+.counter-panel {
+  padding: 1rem;
+  text-align: center;
+  background: var(--surface);
+  color: var(--text);
+  border-radius: 0.75rem;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-lg);
+  max-width: 420px;
+  margin: 0 auto;
+}
