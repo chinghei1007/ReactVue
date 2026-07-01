@@ -18,12 +18,20 @@ export default function TrafficLightPage() {
 
   return (
     <ChallengePage eyebrow="Level 1" title="Traffic Light" summary="Cycle through Red, Yellow, and Green on a timer.">
-      <div className="challenge-demo">
+      <div className="challenge-demo traffic-light-demo">
         <div className="traffic-light-stage" data-active={active}>
-          {lights.map((light) => <span key={light} className={`traffic-light ${light}`} />)}
+          {lights.map((light) => (
+            <span 
+              key={light} 
+              className={`traffic-light ${light}`}
+              data-active={active === light ? 'true' : 'false'}
+            />
+          ))}
         </div>
-        <div className="challenge-actions">
-          <button type="button" onClick={() => setRunning((value) => !value)}>{running ? 'Stop' : 'Start'} auto cycle</button>
+        <div className="traffic-light-controls challenge-actions">
+          <button type="button" onClick={() => setRunning((value) => !value)}>
+            {running ? 'Stop' : 'Start'} auto cycle
+          </button>
           <button type="button" onClick={() => setActive('red')}>Red</button>
           <button type="button" onClick={() => setActive('yellow')}>Yellow</button>
           <button type="button" onClick={() => setActive('green')}>Green</button>

@@ -8,7 +8,7 @@ export default function StarRatingPage() {
 
   return (
     <ChallengePage eyebrow="Level 1" title="Interactive Star Rating" summary="Hover to preview a rating and click to select it.">
-      <div className="challenge-demo">
+      <div className="challenge-demo star-rating-demo">
         <div className="challenge-stars" aria-label={`Rating ${rating} out of 5`}>
           {[1, 2, 3, 4, 5].map((star) => {
             const active = hovered ? star <= hovered : star <= rating
@@ -26,7 +26,14 @@ export default function StarRatingPage() {
             )
           })}
         </div>
-        <p className="challenge-copy">Current rating: {hovered || rating}</p>
+        <div className="star-rating-display">
+          <span>Current rating:</span>
+          <span className="stars-preview">
+            {'★'.repeat(hovered || rating)}
+            {'☆'.repeat(5 - (hovered || rating))}
+          </span>
+          <span>({hovered || rating}/5)</span>
+        </div>
       </div>
     </ChallengePage>
   )
