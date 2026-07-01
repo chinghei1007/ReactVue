@@ -1,0 +1,60 @@
+.level3-shell {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.level3-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  color: #475569;
+  font-size: 0.95rem;
+}
+
+.kanban-board {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.level3-column {
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  border-radius: 20px;
+  background: rgba(15, 23, 42, 0.04);
+  padding: 1rem;
+}
+
+.kanban-column-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.kanban-stack {
+  display: grid;
+  gap: 0.75rem;
+  min-height: 8rem;
+  margin-top: 1rem;
+}
+
+.kanban-card {
+  border-radius: 16px;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  background: rgba(255, 255, 255, 0.9);
+  padding: 0.85rem;
+  cursor: grab;
+}
+
+.kanban-card.is-dragging,
+.kanban-drop-zone.is-over {
+  outline: 2px solid #0f172a;
+}
+
+.kanban-drop-zone {
+  min-height: 4rem;
+  border: 1px dashed rgba(148, 163, 184, 0.6);
+  border-radius: 16px;
+  background: rgba(148, 163, 184, 0.1);
+}

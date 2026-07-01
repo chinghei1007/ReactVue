@@ -1,0 +1,54 @@
+.level3-shell {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.level3-paint-panel {
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  border-radius: 20px;
+  background: rgba(15, 23, 42, 0.04);
+  padding: 1rem;
+}
+
+.paint-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.paint-control {
+  min-width: 120px;
+}
+
+.paint-control span {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: #475569;
+  font-size: 0.92rem;
+}
+
+.paint-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.paint-canvas {
+  width: 100%;
+  max-width: 100%;
+  border-radius: 20px;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  background: #fff;
+  cursor: crosshair;
+  touch-action: none;
+}
+
+.level3-shell button,
+.level3-shell select {
+  border: 1px solid rgba(148, 163, 184, 0.45);
+  border-radius: 14px;
+  padding: 0.7rem 0.95rem;
+  background: #fff;
+}

@@ -1,0 +1,64 @@
+.level3-shell {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.level3-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  color: #475569;
+  font-size: 0.95rem;
+}
+
+.level3-scroller {
+  height: 24rem;
+  overflow: auto;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  border-radius: 20px;
+  padding: 1rem;
+  background: rgba(15, 23, 42, 0.03);
+}
+
+.level3-list {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.level3-list-item {
+  border-radius: 16px;
+  padding: 0.85rem 1rem;
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+}
+
+.level3-loading {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #475569;
+}
+
+.level3-spinner {
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid rgba(71, 85, 105, 0.2);
+  border-top-color: #0f172a;
+  border-radius: 999px;
+  animation: level3-infinite-scroll-spin 0.8s linear infinite;
+}
+
+.level3-button {
+  cursor: pointer;
+  border: 1px solid rgba(148, 163, 184, 0.45);
+  border-radius: 14px;
+  padding: 0.7rem 0.95rem;
+  background: #fff;
+}
+
+@keyframes level3-infinite-scroll-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,50 @@
+.level3-shell {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.typeahead {
+  position: relative;
+}
+
+.typeahead input,
+.level3-card {
+  width: 100%;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  border-radius: 20px;
+  background: rgba(15, 23, 42, 0.04);
+  padding: 1rem;
+}
+
+.typeahead input {
+  border: 1px solid rgba(148, 163, 184, 0.55);
+  border-radius: 14px;
+  padding: 0.8rem 0.95rem;
+  background: #fff;
+}
+
+.typeahead-list {
+  position: absolute;
+  z-index: 5;
+  width: 100%;
+  max-height: 16rem;
+  overflow: auto;
+  margin-top: 0.5rem;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
+}
+
+.typeahead-option {
+  width: 100%;
+  padding: 0.8rem 0.95rem;
+  border: 0;
+  text-align: left;
+  background: transparent;
+  cursor: pointer;
+}
+
+.typeahead-option.is-active {
+  background: #dbeafe;
+}

@@ -1,0 +1,38 @@
+.level3-shell {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.level3-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  color: #475569;
+  font-size: 0.95rem;
+}
+
+.virtual-shell {
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.virtual-list {
+  position: relative;
+  height: 26rem;
+  overflow: auto;
+  background: rgba(15, 23, 42, 0.03);
+}
+
+.virtual-row {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.18);
+  background: rgba(255, 255, 255, 0.78);
+}

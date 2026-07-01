@@ -1,0 +1,46 @@
+.level3-shell {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.undo-shell {
+  display: grid;
+  gap: 1rem;
+}
+
+.undo-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.level3-panel {
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  border-radius: 20px;
+  background: rgba(15, 23, 42, 0.04);
+  padding: 1rem;
+}
+
+.undo-panel textarea {
+  min-height: 12rem;
+  resize: vertical;
+  width: 100%;
+  border: 1px solid rgba(148, 163, 184, 0.55);
+  border-radius: 14px;
+  padding: 0.8rem 0.95rem;
+  background: #fff;
+}
+
+.undo-history {
+  display: grid;
+  gap: 0.5rem;
+  color: #475569;
+  font-size: 0.95rem;
+}
+
+.level3-shell button {
+  border: 1px solid rgba(148, 163, 184, 0.45);
+  border-radius: 14px;
+  padding: 0.7rem 0.95rem;
+  background: #fff;
+}

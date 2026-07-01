@@ -1,0 +1,38 @@
+.level4-shell {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.store-shell {
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  border-radius: 22px;
+  background: rgba(15, 23, 42, 0.04);
+  padding: 1rem;
+}
+
+.store-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.store-actions button {
+  border: 1px solid rgba(148, 163, 184, 0.45);
+  border-radius: 14px;
+  padding: 0.7rem 0.95rem;
+  background: #fff;
+}
+
+.store-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  margin-top: 1rem;
+}
+
+.store-metric {
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.82);
+  padding: 1rem;
+}

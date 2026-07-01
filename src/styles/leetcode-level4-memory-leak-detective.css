@@ -1,0 +1,45 @@
+.level4-shell {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.leak-shell {
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  border-radius: 22px;
+  background: rgba(15, 23, 42, 0.04);
+  padding: 1rem;
+}
+
+.leak-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.leak-actions button {
+  border: 1px solid rgba(148, 163, 184, 0.45);
+  border-radius: 14px;
+  padding: 0.7rem 0.95rem;
+  background: #fff;
+}
+
+.leak-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.leak-card {
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.82);
+  padding: 1rem;
+}
+
+.leak-card pre {
+  overflow: auto;
+  padding: 0.75rem;
+  border-radius: 14px;
+  background: #e2e8f0;
+  font-size: 0.9rem;
+}
