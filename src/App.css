@@ -63,6 +63,9 @@ a {
   max-width: 1200px;
   margin: 0 auto;
   width: 100%;
+  & button {
+    transition: all 0.2s ease;
+  }
 }
 
 .theme-toggle {
