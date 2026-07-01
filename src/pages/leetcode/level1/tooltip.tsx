@@ -7,11 +7,18 @@ export default function TooltipPage() {
 
   return (
     <ChallengePage eyebrow="Level 1" title="Tooltip" summary="Show a small label when hovering an element.">
-      <div className="challenge-demo">
-        <button type="button" onMouseEnter={() => setShow(true)} onMouseLeave={() => setShow(false)}>
+      <div className="challenge-demo tooltip-demo">
+        <button 
+          type="button" 
+          className="tooltip-trigger"
+          onMouseEnter={() => setShow(true)} 
+          onMouseLeave={() => setShow(false)}
+        >
           Hover me
         </button>
-        {show ? <div className="challenge-tooltip">This is a tooltip.</div> : null}
+        {show && (
+          <div className="challenge-tooltip">This is a tooltip.</div>
+        )}
       </div>
     </ChallengePage>
   )

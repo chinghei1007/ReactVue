@@ -9,17 +9,23 @@ const items = [
 ]
 
 export default function AccordionPage() {
-  const [openIndex, setOpenIndex] = useState(0)
+  const [openIndex, setOpenIndex] = useState<number | null>(0)
 
   return (
     <ChallengePage eyebrow="Level 1" title="Basic Accordion" summary="Open one answer at a time in a question list.">
-      <div className="challenge-demo">
+      <div className="challenge-demo accordion-demo">
         {items.map((item, index) => (
-          <section key={item.title}>
-            <button type="button" onClick={() => setOpenIndex((current) => (current === index ? -1 : index))}>
+          <section key={item.title} className="accordion-item">
+            <button 
+              type="button" 
+              aria-expanded={openIndex === index}
+              onClick={() => setOpenIndex((current) => (current === index ? null : index))}
+            >
               {item.title}
             </button>
-            {openIndex === index ? <p className="challenge-copy">{item.body}</p> : null}
+            {openIndex === index && (
+              <div className="accordion-content">{item.body}</div>
+            )}
           </section>
         ))}
       </div>

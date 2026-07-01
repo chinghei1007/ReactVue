@@ -13,7 +13,7 @@ export default function TabsPage() {
 
   return (
     <ChallengePage eyebrow="Level 1" title="Tab Navigation" summary="Switch content by selecting different tabs.">
-      <div className="challenge-demo">
+      <div className="challenge-demo tabs-demo">
         <div className="challenge-tabs">
           {tabs.map((tab) => (
             <button key={tab.id} type="button" aria-pressed={activeTab === tab.id} onClick={() => setActiveTab(tab.id)}>
@@ -21,7 +21,9 @@ export default function TabsPage() {
             </button>
           ))}
         </div>
-        <p className="challenge-copy">{tabs.find((tab) => tab.id === activeTab)?.body}</p>
+        <div className="tab-content">
+          <p>{tabs.find((tab) => tab.id === activeTab)?.body}</p>
+        </div>
       </div>
     </ChallengePage>
   )

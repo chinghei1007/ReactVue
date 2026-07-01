@@ -20,21 +20,30 @@ export default function TodoPage() {
 
   return (
     <ChallengePage eyebrow="Level 1" title="Simple Todo List" summary="Add todos, mark them complete, and delete entries.">
-      <div className="challenge-demo">
-        <div className="challenge-actions">
-          <input value={value} onChange={(event) => setValue(event.target.value)} placeholder="Add a todo" />
-          <button type="button" onClick={addTodo}>Add</button>
+      <div className="challenge-demo todo-demo">
+        <div className="todo-input-section challenge-actions">
+          <input value={value} onChange={(event) => setValue(event.target.value)} placeholder="Add a todo..." />
+          <button type="button" onClick={addTodo}>Add Todo</button>
         </div>
-        <ul className="challenge-list">
-          {todos.map((todo) => (
-            <li key={todo.id}>
-              <button type="button" onClick={() => setTodos((current) => current.map((item) => item.id === todo.id ? { ...item, done: !item.done } : item))}>
-                {todo.done ? '✓' : '○'} {todo.text}
-              </button>
-              <button type="button" onClick={() => setTodos((current) => current.filter((item) => item.id !== todo.id))}>Delete</button>
-            </li>
-          ))}
-        </ul>
+        {todos.length === 0 ? (
+          <p className="todo-empty-state">No todos yet. Add one above!</p>
+        ) : (
+          <ul className="todo-list challenge-list">
+            {todos.map((todo) => (
+              <li key={todo.id}>
+                <button 
+                  type="button" 
+                  className={todo.done ? 'done' : ''}
+                  onClick={() => setTodos((current) => current.map((item) => item.id === todo.id ? { ...item, done: !item.done } : item))}
+                >
+                  <span className="status-icon">{todo.done ? '✓' : '○'}</span>
+                  <span>{todo.text}</span>
+                </button>
+                <button type="button" onClick={() => setTodos((current) => current.filter((item) => item.id !== todo.id))}>Delete</button>
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
     </ChallengePage>
   )

@@ -1,4 +1,69 @@
-.tabs-page {
-  display: grid;
-  gap: 1rem;
+/* Tabs Styles - Enhanced with light/dark mode support */
+
+.tabs-demo {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 700px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.challenge-tabs {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  background: var(--surface-2);
+  border-radius: 1rem;
+  border: 1px solid var(--border-color);
+}
+
+.challenge-tabs button {
+  flex: 1;
+  padding: 0.875rem 1.25rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 0.75rem;
+  background: transparent;
+  color: var(--muted-text);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.challenge-tabs button:hover {
+  background: rgba(59, 130, 246, 0.1);
+  color: var(--text);
+}
+
+.challenge-tabs button[aria-pressed="true"] {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  color: white;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.tab-content {
+  padding: 2rem;
+  background: var(--surface);
+  border: 1px solid var(--border-color);
+  border-radius: 1rem;
+  box-shadow: var(--shadow-lg);
+  min-height: 150px;
+}
+
+.tab-content p {
+  margin: 0;
+  color: var(--text);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+@media (max-width: 640px) {
+  .challenge-tabs {
+    flex-direction: column;
+  }
+  
+  .challenge-tabs button {
+    text-align: left;
+  }
 }
