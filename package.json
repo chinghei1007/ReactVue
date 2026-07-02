@@ -5,11 +5,14 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "pydeps": "pip install -r requirements.txt",
+    "build": "npm run pydeps && tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "server": "node server.js"
   },
   "dependencies": {
+    "child_process": "^1.0.2",
     "marked": "^18.0.5",
     "qrcode": "^1.5.4",
     "react": "^19.2.6",

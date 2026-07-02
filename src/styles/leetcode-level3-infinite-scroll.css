@@ -62,3 +62,54 @@
     transform: rotate(360deg);
   }
 }
+
+.playlist-form {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.playlist.loading {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.status {
+  margin-bottom: 1rem;
+}
+
+.playlist-item {
+  position: relative;
+  background-size: cover; /* or 'contain' */
+  background-position: center;
+  height: 150px;
+  margin-bottom: 1rem;
+  filter: hue-rotate(200deg); /* blue tint */
+  opacity: 0;
+  transform: translateX(20px);
+  animation: fadeSlide 0.5s forwards;
+}
+
+.playlist-item.error {
+  background: #ffdddd;
+  color: #900;
+  padding: 1rem;
+}
+
+.playlist-item .overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--overlay-bg);
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes fadeSlide {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

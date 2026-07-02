@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import ChallengePage from '../../../customElements/ChallengePage'
+import Playlist from "../../../components/Playlist.tsx"
 import '../../../styles/leetcode-level3-infinite-scroll.css'
 
 const allItems = Array.from({ length: 1000 }, (_, index) => ({
@@ -67,6 +68,7 @@ export default function InfiniteScrollPage() {
             ) : null}
           </div>
         </div>
+        <Playlist />
       </div>
     </ChallengePage>
   )
