@@ -20,13 +20,13 @@
   --surface-2: rgba(255, 255, 255, 0.06);
   --hero-span: #cfdaec;
   --text: #e2e8f0;
-  --muted-text: #b5bcc7;
+  --muted-text: #c4cfdf;
   --border-color: rgba(148, 163, 184, 0.18);
   --shadow-lg: 0 18px 30px rgba(0, 0, 0, 0.3);
   --hero-gradient: linear-gradient(135deg, #03071d 0%, #03071d 100%);
   --card-gradient: linear-gradient(180deg, #0f172a 0%, #111827 100%);
   --tag-bg: rgba(255, 255, 255, 0.08);
-  --muted-text-lvl2: #bebebe;
+  --muted-text-lvl2: #a5b4cc;
 
 }
 
