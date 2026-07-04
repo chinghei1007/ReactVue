@@ -37,7 +37,7 @@ export default function TicTacToePage() {
 
   return (
     <ChallengePage eyebrow="Level 2" title="Tic-Tac-Toe" summary="Play a full game and step backward through move history.">
-      <div className="challenge-demo">
+      <div className="challenge-demo tic-tac-toe-page">
         <div className="challenge-grid">
           {current.map((cell, index) => (
             <button key={index} type="button" onClick={() => play(index)}>{cell}</button>
