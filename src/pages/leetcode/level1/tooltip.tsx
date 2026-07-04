@@ -13,7 +13,7 @@ export default function TooltipPage() {
           className="tooltip-trigger"
           onMouseEnter={() => setShow(true)} 
           onClick={() => setShow(true)} 
-          // onMouseLeave={() => setShow(false)}
+          onMouseLeave={() => setShow(false)}
         >
           Hover me
         </button>
