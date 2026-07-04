@@ -4,10 +4,11 @@
   --surface: rgba(255, 255, 255, 0.92);
   --surface-2: rgba(15, 23, 42, 0.06);
   --text: #0f172a;
+  --hero-span: #dee5f0;
   --muted-text: #475569;
   --border-color: rgba(148, 163, 184, 0.25);
   --shadow-lg: 0 18px 30px rgba(15, 23, 42, 0.12);
-  --hero-gradient: linear-gradient(135deg, #0f172a 0%, #1d4ed8 100%);
+  --hero-gradient: linear-gradient(135deg, #2e4fa8 0%, #2e4fa8 100%);
   --card-gradient: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
   --tag-bg: rgba(255, 255, 255, 0.12);
   --muted-text-lvl2: #474747;
@@ -17,11 +18,12 @@
   --bg: #020617;
   --surface: rgba(15, 23, 42, 0.92);
   --surface-2: rgba(255, 255, 255, 0.06);
+  --hero-span: #cfdaec;
   --text: #e2e8f0;
   --muted-text: #b5bcc7;
   --border-color: rgba(148, 163, 184, 0.18);
   --shadow-lg: 0 18px 30px rgba(0, 0, 0, 0.3);
-  --hero-gradient: linear-gradient(135deg, #020617 0%, #1e3a8a 100%);
+  --hero-gradient: linear-gradient(135deg, #03071d 0%, #03071d 100%);
   --card-gradient: linear-gradient(180deg, #0f172a 0%, #111827 100%);
   --tag-bg: rgba(255, 255, 255, 0.08);
   --muted-text-lvl2: #bebebe;
@@ -50,6 +52,10 @@ body {
 
 a {
   color: inherit;
+}
+
+[hidden] {
+  display: none !important;
 }
 
 .app-layout {
@@ -100,8 +106,8 @@ a {
   padding: 2rem;
   border-radius: 24px;
   background: var(--hero-gradient);
-  color: #f8fafc;
-  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.25);
+  color: #ffffff;
+  /* box-shadow: 0 20px 50px rgba(15, 23, 42, 0.25); */
 }
 
 .section-heading {
@@ -163,6 +169,7 @@ a {
   background: var(--tag-bg);
   border: 1px solid rgba(255, 255, 255, 0.14);
   font-size: 0.9rem;
+  color: var(--hero-span);
 }
 
 .section-block {
@@ -189,12 +196,12 @@ a {
   background: var(--card-gradient);
   border: 1px solid var(--border-color);
   box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
-  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+  /* transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease; */
 }
 
 .mini-card:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-lg);
+  /* transform: translateY(-3px); */
+  /* box-shadow: var(--shadow-lg); */
   border-color: rgba(59, 130, 246, 0.35);
 }
 
