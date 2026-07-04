@@ -68,7 +68,6 @@ const navItems: TopNavItem[] = [
           { label: 'Event Bus', to: '/leetcode/level4/event-bus' },
           { label: 'Markdown Preview', to: '/leetcode/level4/markdown-previewer' },
           { label: 'Masonry Layout', to: '/leetcode/level4/masonry-layout' },
-          { label: 'Memory Leak Detective', to: '/leetcode/level4/memory-leak-detective' },
         ],
       },
     ],
