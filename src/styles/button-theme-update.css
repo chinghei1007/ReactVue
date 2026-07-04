@@ -1,0 +1,55 @@
+/* Global Button Theme Update - Light Blue with Analogous Colors */
+/* Remove artificial shadows and hover translate effects */
+/* Ensure white text on buttons in both light and dark modes */
+
+/* Level 1, 3, 4 common button styles */
+.level3-shell button,
+.level4-shell button,
+.challenge-tabs button[aria-pressed="true"],
+.todo-input-section button,
+.todo-list li button:last-of-type,
+.traffic-light-controls button,
+.counter-actions button,
+.wizard-actions button,
+.event-actions button,
+.leak-actions button,
+.store-actions button,
+.router-nav button,
+.toast button {
+  background: linear-gradient(135deg, #0369a1 0%, #075985 100%);
+  color: white;
+  border: none;
+  transition: background 0.2s ease;
+}
+
+.level3-shell button:hover,
+.level4-shell button:hover,
+.challenge-tabs button[aria-pressed="true"]:hover,
+.todo-input-section button:hover,
+.todo-list li button:last-of-type:hover,
+.traffic-light-controls button:hover,
+.counter-actions button:hover,
+.wizard-actions button:hover,
+.event-actions button:hover,
+.leak-actions button:hover,
+.store-actions button:hover,
+.router-nav button:hover,
+.toast button:hover {
+  background: linear-gradient(135deg, #075985 0%, #0c4a6e 100%);
+}
+
+.level3-shell button:active,
+.level4-shell button:active,
+.challenge-tabs button[aria-pressed="true"]:active,
+.todo-input-section button:active,
+.todo-list li button:last-of-type:active,
+.traffic-light-controls button:active,
+.counter-actions button:active,
+.wizard-actions button:active,
+.event-actions button:active,
+.leak-actions button:active,
+.store-actions button:active,
+.router-nav button:active,
+.toast button:active {
+  background: linear-gradient(135deg, #0c4a6e 0%, #082f49 100%);
+}

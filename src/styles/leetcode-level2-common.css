@@ -1,0 +1,298 @@
+/* Level 2 Styles - Light Blue Theme with Analogous Colors */
+
+/* Common demo container for all level 2 pages */
+.challenge-demo {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+/* Challenge metric/display text */
+.challenge-metric {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0;
+  text-align: center;
+  letter-spacing: -0.02em;
+}
+
+/* Challenge copy/description text */
+.challenge-copy {
+  margin: 0;
+  color: var(--muted-text);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Challenge actions container */
+.challenge-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+/* Base button styles for level 2 */
+.challenge-actions button,
+.challenge-demo > button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  background: linear-gradient(135deg, #0369a1 0%, #075985 100%);
+  color: white;
+  transition: background 0.2s ease;
+}
+
+.challenge-actions button:hover,
+.challenge-demo > button:hover {
+  background: linear-gradient(135deg, #075985 0%, #0c4a6e 100%);
+}
+
+.challenge-actions button:active,
+.challenge-demo > button:active {
+  background: linear-gradient(135deg, #0c4a6e 0%, #082f49 100%);
+}
+
+.challenge-actions button:disabled,
+.challenge-demo > button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Challenge list styles */
+.challenge-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.challenge-list li {
+  padding: 1rem 1.25rem;
+  background: var(--surface);
+  border: 1px solid var(--border-color);
+  border-radius: 0.875rem;
+  color: var(--text);
+  font-size: 1rem;
+}
+
+/* Challenge grid for tic-tac-toe and memory card */
+.challenge-grid {
+  display: grid;
+  gap: 0.75rem;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.challenge-grid button {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  border: 2px solid var(--border-color);
+  border-radius: 0.875rem;
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.challenge-grid button:hover {
+  border-color: #0369a1;
+  background: rgba(3, 105, 161, 0.08);
+}
+
+/* Modal specific styles */
+.challenge-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.challenge-modal {
+  background: var(--surface);
+  border: 1px solid var(--border-color);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  max-width: 400px;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.challenge-modal .challenge-copy {
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+/* Carousel dots */
+.challenge-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.challenge-dots button {
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border: 2px solid var(--border-color);
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--muted-text);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.challenge-dots button[aria-pressed="true"] {
+  background: linear-gradient(135deg, #0369a1 0%, #075985 100%);
+  color: white;
+  border-color: #0369a1;
+}
+
+.challenge-dots button:hover {
+  border-color: #0369a1;
+  color: #0369a1;
+}
+
+/* Form validation styles */
+.challenge-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.challenge-field label {
+  font-weight: 600;
+  color: var(--text);
+  font-size: 0.95rem;
+}
+
+.challenge-field input {
+  padding: 0.875rem 1.25rem;
+  font-size: 1rem;
+  border: 2px solid var(--border-color);
+  border-radius: 0.875rem;
+  background: var(--surface);
+  color: var(--text);
+  transition: border-color 0.2s ease;
+  outline: none;
+}
+
+.challenge-field input:focus {
+  border-color: #0369a1;
+}
+
+.challenge-field span {
+  color: #dc2626;
+  font-size: 0.875rem;
+}
+
+/* QR Code specific */
+.qr-code-page textarea {
+  width: 100%;
+  min-height: 100px;
+  padding: 0.875rem 1.25rem;
+  font-size: 1rem;
+  border: 2px solid var(--border-color);
+  border-radius: 0.875rem;
+  background: var(--surface);
+  color: var(--text);
+  resize: vertical;
+}
+
+.qr-code-page img {
+  max-width: 220px;
+  border-radius: 0.875rem;
+  border: 1px solid var(--border-color);
+}
+
+/* Stopwatch laps */
+.stopwatch-page .challenge-list {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* Memory card game */
+.memory-card-page .challenge-grid {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* Tic tac toe */
+.tic-tac-toe-page .challenge-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* Pagination */
+.pagination-page .challenge-list {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* Debounced search */
+.debounced-search-page input {
+  width: 100%;
+  padding: 0.875rem 1.25rem;
+  font-size: 1rem;
+  border: 2px solid var(--border-color);
+  border-radius: 0.875rem;
+  background: var(--surface);
+  color: var(--text);
+  transition: border-color 0.2s ease;
+  outline: none;
+}
+
+.debounced-search-page input:focus {
+  border-color: #0369a1;
+}
+
+.debounced-search-page .challenge-list {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .challenge-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .challenge-actions button,
+  .challenge-demo > button {
+    justify-content: center;
+  }
+
+  .challenge-grid {
+    max-width: 100%;
+  }
+
+  .memory-card-page .challenge-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .tic-tac-toe-page .challenge-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

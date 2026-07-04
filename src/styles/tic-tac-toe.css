@@ -1,3 +1,5 @@
+@import './leetcode-level2-common.css';
+
 .tic-tac-toe-page {
   display: grid;
   gap: 1rem;
