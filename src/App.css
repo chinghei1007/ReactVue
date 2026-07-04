@@ -45,6 +45,7 @@ body {
     radial-gradient(circle at top right, rgba(16, 185, 129, 0.08), transparent 28%),
     var(--bg);
   color: var(--text);
+  font-family: sans-serif;
 }
 
 a {
