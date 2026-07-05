@@ -81,3 +81,4 @@ htmlcov/
 # Cache directories
 .julia/
 .zig-cache/
+/.vite
