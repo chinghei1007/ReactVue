@@ -1,6 +1,6 @@
 // src/App.tsx
 import { useEffect, useState } from 'react'
-import { useRoutes } from 'react-router-dom'
+import { useRoutes, useLocation } from 'react-router-dom'
 import routes from '~react-pages'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
@@ -11,15 +11,28 @@ export default function App() {
     const storedTheme = localStorage.getItem('theme')
     return storedTheme === 'dark' ? 'dark' : 'light'
   })
+  const location = useLocation()
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme
     localStorage.setItem('theme', theme)
   }, [theme])
 
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [location.pathname])
+
   return (
       <div className="app-layout" data-theme={theme}>
         <Navbar />
+        <button
+          type="button"
+          className="scroll-to-top-btn"
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          aria-label="Scroll to top"
+        >
+          ↑
+        </button>
         <button
           type="button"
           className="theme-toggle"
