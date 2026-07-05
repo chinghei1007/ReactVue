@@ -91,3 +91,4 @@ Thumbs.db
 *.tar.xz
 *.tar.zst
 ```
+/.wrangler/state/v3/cache
