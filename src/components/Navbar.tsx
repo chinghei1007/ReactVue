@@ -39,7 +39,6 @@ const navItems: TopNavItem[] = [
           { label: 'Modal', to: '/leetcode/level2/modal' },
           { label: 'Carousel', to: '/leetcode/level2/carousel' },
           { label: 'Form Validation', to: '/leetcode/level2/form-validation' },
-          // { label: 'Dark Mode', to: '/leetcode/level2/dark-mode' },
           { label: 'Memory Card', to: '/leetcode/level2/memory-card' },
           { label: 'Pagination', to: '/leetcode/level2/pagination' },
           { label: 'QR Code', to: '/leetcode/level2/qr-code' },
