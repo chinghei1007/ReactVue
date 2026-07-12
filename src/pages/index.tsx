@@ -1,5 +1,5 @@
-import ChallengeSection from '../customElements/ChallengeSection'
 import SectionHeading from '../customElements/SectionHeading'
+import FoldableChallengeSection from '../customElements/FoldableChallengeSection'
 import { challengeSections, heroProfile } from './leetcode/challenges'
 
 export default function Home() {
@@ -15,15 +15,7 @@ export default function Home() {
         </div>
       </section>
 
-      {challengeSections.map((section) => (
-        <ChallengeSection
-          key={section.eyebrow}
-          eyebrow={section.eyebrow}
-          title={section.title}
-          description={section.description}
-          items={section.items}
-        />
-      ))}
+      <FoldableChallengeSection sections={challengeSections} />
     </div>
   )
 }

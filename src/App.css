@@ -12,20 +12,6 @@
   --card-gradient: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
   --tag-bg: rgba(255, 255, 255, 0.12);
   --muted-text-lvl2: #474747;
-  /* Button theme colors - light mode */
-  --button-primary: #93c5fd;
-  --button-primary-hover: #bfdbfe;
-  --button-secondary: #d1d5db;
-  --button-secondary-hover: #e5e7eb;
-  --button-success: #86efac;
-  --button-success-hover: #bbf7d0;
-  --button-danger: #fca5a5;
-  --button-danger-hover: #fecaca;
-  --button-warning: #fde047;
-  --button-warning-hover: #fef08a;
-  --button-info: #7dd3fc;
-  --button-info-hover: #bae6fd;
-  --button-text: #1e293b;
 }
 :root[data-theme='dark'] {
   color-scheme: dark;
@@ -41,20 +27,7 @@
   --card-gradient: linear-gradient(180deg, #0f172a 0%, #111827 100%);
   --tag-bg: rgba(255, 255, 255, 0.08);
   --muted-text-lvl2: #a5b4cc;
-  /* Button theme colors - dark mode */
-  --button-primary: #1e40af;
-  --button-primary-hover: #1e3a8a;
-  --button-secondary: #4b5563;
-  --button-secondary-hover: #374151;
-  --button-success: #166534;
-  --button-success-hover: #14532d;
-  --button-danger: #991b1b;
-  --button-danger-hover: #7f1d1d;
-  --button-warning: #854d0e;
-  --button-warning-hover: #713f12;
-  --button-info: #075985;
-  --button-info-hover: #0c4a6e;
-  --button-text: #e2e8f0;
+
 }
 
 * {
@@ -114,6 +87,47 @@ a {
   color: var(--text);
   box-shadow: var(--shadow-lg);
   cursor: pointer;
+}
+
+.scroll-to-top-btn {
+  position: fixed;
+  right: 1rem;
+  bottom: 5rem;
+  z-index: 1001;
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: var(--shadow-lg);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.scroll-to-top-btn:hover {
+  transform: translateY(-2px);
+  background: var(--surface-2);
+  border-color: rgba(59, 130, 246, 0.35);
+}
+
+:root[data-theme='light'] .scroll-to-top-btn {
+  background: #e0f2fe;
+  border-color: #7dd3fc;
+}
+
+:root[data-theme='dark'] .scroll-to-top-btn {
+  background: #0c4a6e;
+  border-color: #075985;
+}
+
+.scroll-to-top-btn svg {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
 }
 
 .home-page {
@@ -215,7 +229,7 @@ a {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
-  min-height: 170px;
+  min-height: 150px;
   padding: 1.25rem;
   border-radius: 20px;
   text-decoration: none;
@@ -264,16 +278,224 @@ a {
   color: var(--muted-text);
 }
 
+/* Foldable Challenge Section Styles */
+.foldable-challenge-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.5rem;
+  border-radius: 20px;
+  background: var(--surface);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-lg);
+}
+
+.levels-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.levels-label {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.05em;
+}
+
+.level-tabs {
+  display: flex;
+  gap: 0.25rem;
+  position: relative;
+}
+
+.level-tab {
+  padding: 0.5rem 1.25rem;
+  border: none;
+  background: transparent;
+  color: var(--muted-text);
+  font-size: 0.95rem;
+  cursor: pointer;
+  border-radius: 8px 8px 0 0;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.level-tab:hover {
+  background: var(--surface-2);
+  color: var(--text);
+}
+
+.level-tab.is-active {
+  background: var(--surface);
+  color: #2563eb;
+  font-weight: 600;
+}
+
+:root[data-theme='dark'] .level-tab.is-active {
+  color: #60a5fa;
+}
+
+.level-tab.is-active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #2563eb;
+}
+
+:root[data-theme='dark'] .level-tab.is-active::after {
+  background: #60a5fa;
+}
+
+.cards-container-wrapper {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.3s ease;
+  position: relative;
+}
+
+.cards-container-wrapper.is-expanded {
+  max-height: 800px;
+  opacity: 1;
+}
+
+.cards-container {
+  max-height: calc(150px * 2 + 1rem * 2);
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding-right: 0.5rem;
+}
+
+.cards-container::-webkit-scrollbar {
+  display: none;
+}
+
+.scroll-buttons {
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  z-index: 10;
+}
+
+.scroll-btn {
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.1);
+}
+
+:root[data-theme='dark'] .scroll-btn {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.scroll-btn:hover:not(:disabled) {
+  background: var(--surface-2);
+  border-color: rgba(59, 130, 246, 0.35);
+  transform: translateY(-1px);
+}
+
+:root[data-theme='dark'] .scroll-btn:hover:not(:disabled) {
+  border-color: rgba(96, 165, 250, 0.35);
+}
+
+.scroll-btn:disabled,
+.scroll-btn.is-disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.scroll-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+.level-info {
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.level-title {
+  margin: 0 0 0.5rem;
+  font-size: 1.2rem;
+  color: var(--text);
+}
+
+:root[data-theme='light'] .level-title {
+  color: #1e40af;
+}
+
+:root[data-theme='dark'] .level-title {
+  color: #60a5fa;
+}
+
+.level-description {
+  margin: 0;
+  color: var(--muted-text);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
 @media (max-width: 640px) {
-  .main-content {
-    padding: 1rem;
+  .levels-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
   }
 
-  .hero-panel {
-    padding: 1.35rem;
+  .level-tabs {
+    width: 100%;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
   }
 
-  .card-grid {
-    grid-template-columns: 1fr;
+  .level-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .level-tab {
+    padding: 0.5rem 1rem;
+    white-space: nowrap;
+  }
+
+  .cards-container-wrapper.is-expanded {
+    max-height: 600px;
+  }
+
+  .cards-container {
+    max-height: calc(150px * 2 + 1rem * 2);
+  }
+
+  .scroll-buttons {
+    right: 0.25rem;
+  }
+
+  .scroll-btn {
+    width: 28px;
+    height: 28px;
+  }
+
+  .scroll-btn svg {
+    width: 14px;
+    height: 14px;
   }
 }

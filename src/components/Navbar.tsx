@@ -73,7 +73,7 @@ const navItems: TopNavItem[] = [
     ],
   },
   { label: 'About', to: '/about' },
-  { label: 'Contact', to: '/contact' },
+  // { label: 'Contact', to: '/contact' },
 ]
 
 // --- Render helpers ---

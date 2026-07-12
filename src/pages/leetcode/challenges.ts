@@ -8,10 +8,10 @@ export type ChallengeSectionData = {
 }
 
 export const heroProfile = {
-  eyebrow: 'Frontend Developer',
-  title: 'Building interactive UI with React, JavaScript, Vite, and Tailwind.',
+  eyebrow: 'A testing Leetcode site',
+  title: 'Building an website with React, JavaScript, Vite, and Tailwind',
   description:
-    'I build client-side products and prototypes with Strapi, Python for machine learning workflows, Dify, RAG systems, and model routing through Dify extensions.',
+    'Using Navbar and footer as a component throughout the site, and providing Dark/Light mode support. Original thought is the integrate the site with CMS (Content Management System) like Strapi. However, the site does not require constant content changes or swapping. <br>Currently, this site is to experiment with styles, React auto-routing, and deployment to Cloudflare Pages. Wanted to try out Cloudflare deployment with databse support afterwards.',
   tags: ['React', 'JavaScript', 'Vite', 'Tailwind', 'Strapi', 'Python + ML', 'Dify', 'RAG', 'Model Routing'],
 }
 
@@ -41,7 +41,6 @@ export const challengeSections: ChallengeSectionData[] = [
       { title: 'Modal', description: 'Open, close, and trap interaction cleanly.', to: '/leetcode/level2/modal' },
       { title: 'Carousel', description: 'Navigate images with autoplay and dots.', to: '/leetcode/level2/carousel' },
       { title: 'Form Validation', description: 'Validate live and block invalid submit.', to: '/leetcode/level2/form-validation' },
-      { title: 'Dark Mode', description: 'Persist theme preference across reloads.', to: '/leetcode/level2/dark-mode' },
       { title: 'Memory Card Game', description: 'Flip, match, and track moves.', to: '/leetcode/level2/memory-card' },
       { title: 'Pagination', description: 'Page through remote content in chunks.', to: '/leetcode/level2/pagination' },
       { title: 'QR Code Generator', description: 'Generate QR codes from typed text.', to: '/leetcode/level2/qr-code' },
@@ -74,7 +73,6 @@ export const challengeSections: ChallengeSectionData[] = [
       { title: 'Event Bus', description: 'Global pub/sub with toast notifications.', to: '/leetcode/level4/event-bus' },
       { title: 'Markdown Previewer', description: 'Parse markdown with an npm package and render HTML live.', to: '/leetcode/level4/markdown-previewer' },
       { title: 'Masonry Layout', description: 'Pack variable-height cards into the shortest column.', to: '/leetcode/level4/masonry-layout' },
-      { title: 'Memory Leak Detective', description: 'Compare leaky subscriptions with proper cleanup.', to: '/leetcode/level4/memory-leak-detective' },
     ],
   },
 ]
