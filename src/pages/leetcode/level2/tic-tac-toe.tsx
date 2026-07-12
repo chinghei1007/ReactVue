@@ -15,42 +15,53 @@ const lines = [
 
 function calculateWinner(board: string[]) {
   for (const [a, b, c] of lines) {
-    if (board[a] && board[a] === board[b] && board[a] === board[c]) return board[a]
+    if (board[a] && board[a] === board[b] && board[a] === board[c]) {
+      return { winner: board[a], line: [a, b, c] }
+    }
   }
-  return ''
+  return { winner: '', line: [] as number[] }
 }
 
 export default function TicTacToePage() {
-  const [history, setHistory] = useState<string[][]>([Array(9).fill('')])
-  const [step, setStep] = useState(0)
-  const xIsNext = step % 2 === 0
-  const current = history[step]
-  const winner = useMemo(() => calculateWinner(current), [current])
+  const [board, setBoard] = useState<string[]>(Array(9).fill(''))
+  const xIsNext = board.filter(cell => cell !== '').length % 2 === 0
+  const { winner, line } = useMemo(() => calculateWinner(board), [board])
+  const isDraw = !winner && board.every(cell => cell !== '')
 
   const play = (index: number) => {
-    if (current[index] || winner) return
-    const next = current.slice()
+    if (board[index] || winner) return
+    const next = board.slice()
     next[index] = xIsNext ? 'X' : 'O'
-    setHistory((currentHistory) => [...currentHistory.slice(0, step + 1), next])
-    setStep(step + 1)
+    setBoard(next)
+  }
+
+  const reset = () => {
+    setBoard(Array(9).fill(''))
   }
 
   return (
-    <ChallengePage eyebrow="Level 2" title="Tic-Tac-Toe" summary="Play a full game and step backward through move history.">
+    <ChallengePage eyebrow="Level 2" title="Tic-Tac-Toe" summary="Play a full game. A red line highlights the winning combination.">
       <div className="challenge-demo tic-tac-toe-page">
         <div className="challenge-grid">
-          {current.map((cell, index) => (
-            <button key={index} type="button" onClick={() => play(index)}>{cell}</button>
-          ))}
-        </div>
-        <p className="challenge-copy">{winner ? `Winner: ${winner}` : `Next player: ${xIsNext ? 'X' : 'O'}`}</p>
-        <div className="challenge-actions">
-          <button type="button" onClick={() => { setHistory([Array(9).fill('')]); setStep(0) }}>Restart</button>
-          {history.map((_, move) => (
-            <button key={move} type="button" onClick={() => setStep(move)}>
-              Go to move {move}
+          {board.map((cell, index) => (
+            <button 
+              key={index} 
+              type="button" 
+              onClick={() => play(index)}
+              className={line.includes(index) && winner ? 'winning-cell' : ''}
+            >
+              {cell}
             </button>
           ))}
+          {winner && (
+            <div className="winning-line" data-line={JSON.stringify(line)}></div>
+          )}
+        </div>
+        <p className="challenge-copy">
+          {winner ? `Winner: ${winner}` : isDraw ? "It's a draw!" : `Next player: ${xIsNext ? 'X' : 'O'}`}
+        </p>
+        <div className="challenge-actions">
+          <button type="button" onClick={reset}>Restart</button>
         </div>
       </div>
     </ChallengePage>

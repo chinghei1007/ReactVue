@@ -12,6 +12,20 @@
   --card-gradient: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
   --tag-bg: rgba(255, 255, 255, 0.12);
   --muted-text-lvl2: #474747;
+  /* Button theme colors - light mode */
+  --button-primary: #93c5fd;
+  --button-primary-hover: #bfdbfe;
+  --button-secondary: #d1d5db;
+  --button-secondary-hover: #e5e7eb;
+  --button-success: #86efac;
+  --button-success-hover: #bbf7d0;
+  --button-danger: #fca5a5;
+  --button-danger-hover: #fecaca;
+  --button-warning: #fde047;
+  --button-warning-hover: #fef08a;
+  --button-info: #7dd3fc;
+  --button-info-hover: #bae6fd;
+  --button-text: #1e293b;
 }
 :root[data-theme='dark'] {
   color-scheme: dark;
@@ -27,7 +41,20 @@
   --card-gradient: linear-gradient(180deg, #0f172a 0%, #111827 100%);
   --tag-bg: rgba(255, 255, 255, 0.08);
   --muted-text-lvl2: #a5b4cc;
-
+  /* Button theme colors - dark mode */
+  --button-primary: #1e40af;
+  --button-primary-hover: #1e3a8a;
+  --button-secondary: #4b5563;
+  --button-secondary-hover: #374151;
+  --button-success: #166534;
+  --button-success-hover: #14532d;
+  --button-danger: #991b1b;
+  --button-danger-hover: #7f1d1d;
+  --button-warning: #854d0e;
+  --button-warning-hover: #713f12;
+  --button-info: #075985;
+  --button-info-hover: #0c4a6e;
+  --button-text: #e2e8f0;
 }
 
 * {

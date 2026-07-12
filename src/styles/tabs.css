@@ -37,9 +37,9 @@
 }
 
 .challenge-tabs button[aria-pressed="true"] {
-  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
-  color: white;
-  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+  background: var(--button-primary);
+  color: var(--button-text);
+  box-shadow: none;
 }
 
 .tab-content {
