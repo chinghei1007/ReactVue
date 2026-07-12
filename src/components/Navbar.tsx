@@ -39,6 +39,7 @@ const navItems: TopNavItem[] = [
           { label: 'Modal', to: '/leetcode/level2/modal' },
           { label: 'Carousel', to: '/leetcode/level2/carousel' },
           { label: 'Form Validation', to: '/leetcode/level2/form-validation' },
+          // { label: 'Dark Mode', to: '/leetcode/level2/dark-mode' },
           { label: 'Memory Card', to: '/leetcode/level2/memory-card' },
           { label: 'Pagination', to: '/leetcode/level2/pagination' },
           { label: 'QR Code', to: '/leetcode/level2/qr-code' },
@@ -76,15 +77,12 @@ const navItems: TopNavItem[] = [
 ]
 
 // --- Render helpers ---
-function renderSecondLevel(
-  items: { label: string; to: string }[],
-  onLinkClick: () => void,
-) {
+function renderSecondLevel(items: { label: string; to: string }[]) {
   return (
     <ul className="dropdown-sub">
       {items.map((sub) => (
         <li key={sub.label}>
-          <Link to={sub.to} onClick={onLinkClick}>{sub.label}</Link>
+          <Link to={sub.to}>{sub.label}</Link>
         </li>
       ))}
     </ul>
@@ -95,7 +93,6 @@ function renderFirstLevel(
   items: SecondLevelItem[],
   openSubPanel: string | null,
   setOpenSubPanel: React.Dispatch<React.SetStateAction<string | null>>,
-  onLinkClick: () => void,
 ) {
   return (
     <ul className="dropdown">
@@ -112,11 +109,11 @@ function renderFirstLevel(
                 {child.label}
               </button>
               <div className={`dropdown-sub-panel ${openSubPanel === child.label ? 'is-open' : ''}`}>
-                {renderSecondLevel(child.children, onLinkClick)}
+                {renderSecondLevel(child.children)}
               </div>
             </>
           ) : (
-            <Link to={child.to} onClick={onLinkClick}>{child.label}</Link>
+            <Link to={child.to}>{child.label}</Link>
           )}
         </li>
       ))}
@@ -130,19 +127,17 @@ export default function Navbar() {
   const [openPanel, setOpenPanel] = useState<string | null>(null)
   const [openSubPanel, setOpenSubPanel] = useState<string | null>(null)
 
-  const handleLinkClick = () => {
-    setMobileOpen(false)
-    setOpenPanel(null)
-    setOpenSubPanel(null)
-  }
-
   return (
     <nav className="navbar">
       <div className="navbar-inner">
         <Link
           to="/"
           className="navbar-brand"
-          onClick={handleLinkClick}
+          onClick={() => {
+            setMobileOpen(false)
+            setOpenPanel(null)
+            setOpenSubPanel(null)
+          }}
         >
           MyApp
         </Link>
@@ -180,14 +175,18 @@ export default function Navbar() {
                     {item.label}
                   </button>
                   <div className={`nav-panel ${openPanel === item.label ? 'is-open' : ''}`}>
-                    {renderFirstLevel(item.children, openSubPanel, setOpenSubPanel, handleLinkClick)}
+                    {renderFirstLevel(item.children, openSubPanel, setOpenSubPanel)}
                   </div>
                 </>
               ) : (
                 <Link
                   to={item.to}
                   className="nav-link"
-                  onClick={handleLinkClick}
+                  onClick={() => {
+                    setMobileOpen(false)
+                    setOpenPanel(null)
+                    setOpenSubPanel(null)
+                  }}
                 >
                   {item.label}
                 </Link>

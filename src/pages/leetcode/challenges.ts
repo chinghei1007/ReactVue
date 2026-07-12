@@ -41,6 +41,7 @@ export const challengeSections: ChallengeSectionData[] = [
       { title: 'Modal', description: 'Open, close, and trap interaction cleanly.', to: '/leetcode/level2/modal' },
       { title: 'Carousel', description: 'Navigate images with autoplay and dots.', to: '/leetcode/level2/carousel' },
       { title: 'Form Validation', description: 'Validate live and block invalid submit.', to: '/leetcode/level2/form-validation' },
+      { title: 'Dark Mode', description: 'Persist theme preference across reloads.', to: '/leetcode/level2/dark-mode' },
       { title: 'Memory Card Game', description: 'Flip, match, and track moves.', to: '/leetcode/level2/memory-card' },
       { title: 'Pagination', description: 'Page through remote content in chunks.', to: '/leetcode/level2/pagination' },
       { title: 'QR Code Generator', description: 'Generate QR codes from typed text.', to: '/leetcode/level2/qr-code' },
@@ -73,6 +74,7 @@ export const challengeSections: ChallengeSectionData[] = [
       { title: 'Event Bus', description: 'Global pub/sub with toast notifications.', to: '/leetcode/level4/event-bus' },
       { title: 'Markdown Previewer', description: 'Parse markdown with an npm package and render HTML live.', to: '/leetcode/level4/markdown-previewer' },
       { title: 'Masonry Layout', description: 'Pack variable-height cards into the shortest column.', to: '/leetcode/level4/masonry-layout' },
+      { title: 'Memory Leak Detective', description: 'Compare leaky subscriptions with proper cleanup.', to: '/leetcode/level4/memory-leak-detective' },
     ],
   },
 ]

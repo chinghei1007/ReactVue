@@ -41,17 +41,17 @@
   font-weight: 600;
   border: none;
   border-radius: 0.875rem;
-  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
-  color: white;
+  background: var(--button-primary);
+  color: var(--button-text);
   cursor: pointer;
   transition: all 0.2s ease;
-  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+  box-shadow: none;
 }
 
 .todo-input-section button:hover {
-  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(59, 130, 246, 0.4);
+  background: var(--button-primary-hover);
+  transform: none;
+  box-shadow: none;
 }
 
 .todo-input-section button:active {
@@ -122,9 +122,9 @@
 }
 
 .todo-list li button:first-of-type.done .status-icon {
-  background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
-  border-color: #22c55e;
-  color: white;
+  background: var(--button-success);
+  border-color: var(--button-success);
+  color: var(--button-text);
 }
 
 .todo-list li button:last-of-type {
@@ -133,17 +133,17 @@
   font-weight: 500;
   border: none;
   border-radius: 0.625rem;
-  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
-  color: white;
+  background: var(--button-danger);
+  color: var(--button-text);
   cursor: pointer;
   transition: all 0.2s ease;
-  box-shadow: 0 2px 8px rgba(239, 68, 68, 0.2);
+  box-shadow: none;
 }
 
 .todo-list li button:last-of-type:hover {
-  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+  background: var(--button-danger-hover);
+  transform: none;
+  box-shadow: none;
 }
 
 .todo-list li button:last-of-type:active {

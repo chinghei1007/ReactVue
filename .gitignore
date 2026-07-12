@@ -68,3 +68,4 @@ lerna-debug.log*
 ehthumbs.db
 Thumbs.db
 ```
+/.wrangler
