@@ -44,19 +44,19 @@
   border: none;
   border-radius: 0.75rem;
   cursor: pointer;
-  background: linear-gradient(135deg, #0369a1 0%, #075985 100%);
-  color: white;
+  background: var(--button-primary);
+  color: var(--button-text);
   transition: background 0.2s ease;
 }
 
 .challenge-actions button:hover,
 .challenge-demo > button:hover {
-  background: linear-gradient(135deg, #075985 0%, #0c4a6e 100%);
+  background: var(--button-primary-hover);
 }
 
 .challenge-actions button:active,
 .challenge-demo > button:active {
-  background: linear-gradient(135deg, #0c4a6e 0%, #082f49 100%);
+  background: var(--button-primary-active, var(--button-primary));
 }
 
 .challenge-actions button:disabled,
@@ -165,9 +165,9 @@
 }
 
 .challenge-dots button[aria-pressed="true"] {
-  background: linear-gradient(135deg, #0369a1 0%, #075985 100%);
-  color: white;
-  border-color: #0369a1;
+  background: var(--button-primary);
+  color: var(--button-text);
+  border-color: var(--button-primary);
 }
 
 .challenge-dots button:hover {

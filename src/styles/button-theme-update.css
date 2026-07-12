@@ -16,8 +16,8 @@
 .store-actions button,
 .router-nav button,
 .toast button {
-  background: linear-gradient(135deg, #0369a1 0%, #075985 100%);
-  color: white;
+  background: var(--button-primary);
+  color: var(--button-text);
   border: none;
   transition: background 0.2s ease;
 }
@@ -35,7 +35,7 @@
 .store-actions button:hover,
 .router-nav button:hover,
 .toast button:hover {
-  background: linear-gradient(135deg, #075985 0%, #0c4a6e 100%);
+  background: var(--button-primary-hover);
 }
 
 .level3-shell button:active,
@@ -51,5 +51,5 @@
 .store-actions button:active,
 .router-nav button:active,
 .toast button:active {
-  background: linear-gradient(135deg, #0c4a6e 0%, #082f49 100%);
+  background: var(--button-primary-active, var(--button-primary));
 }
