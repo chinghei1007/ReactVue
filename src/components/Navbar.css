@@ -151,6 +151,10 @@
   pointer-events: none;
 }
 
+.nav-panel[style*="right: 0"] {
+  transform-origin: top right;
+}
+
 .nav-panel.is-open {
   opacity: 1;
   visibility: visible;
