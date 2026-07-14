@@ -7,7 +7,7 @@ export default function Home() {
     <div className="home-page">
       <section className="hero-panel">
         <SectionHeading eyebrow={heroProfile.eyebrow} title={heroProfile.title} />
-        <p className="hero-copy">{heroProfile.description}</p>
+        <div className="hero-copy"> {heroProfile.description.map((text, index) => ( <p key={index}>{text}</p> ))} </div>
         <div className="hero-tags">
           {heroProfile.tags.map((tag) => (
             <span key={tag}>{tag}</span>

@@ -11,7 +11,7 @@ export const heroProfile = {
   eyebrow: 'A testing Leetcode site',
   title: 'Building an website with React, JavaScript, Vite, and Tailwind',
   description:
-    'Using Navbar and footer as a component throughout the site, and providing Dark/Light mode support. Original thought is the integrate the site with CMS (Content Management System) like Strapi. However, the site does not require constant content changes or swapping. <br>Currently, this site is to experiment with styles, React auto-routing, and deployment to Cloudflare Pages. Wanted to try out Cloudflare deployment with databse support afterwards.',
+    ['Using Navbar and footer as a component throughout the site, and providing Dark/Light mode support. Original thought is the integrate the site with CMS (Content Management System) like Strapi. However, the site does not require constant content changes or swapping.','Currently, this site is to experiment with styles, React auto-routing, and deployment to Cloudflare Pages. Wanted to try out Cloudflare deployment with databse support afterwards.'],
   tags: ['React', 'JavaScript', 'Vite', 'Tailwind', 'Strapi', 'Python + ML', 'Dify', 'RAG', 'Model Routing'],
 }
 

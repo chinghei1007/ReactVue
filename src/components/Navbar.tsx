@@ -72,7 +72,13 @@ const navItems: TopNavItem[] = [
       },
     ],
   },
-  { label: 'About', to: '/about' },
+  {
+    label: 'NextWork',
+    children: [
+      { label: 'AI Security Scanner for Python', to: 'nextwork/ai-security-scanner'}
+    ]
+  }
+  // { label: 'About', to: '/about' },
   // { label: 'Contact', to: '/contact' },
 ]
 

@@ -10,10 +10,10 @@ const footerLinks = {
     { label: 'Docs', to: '/docs' },
   ],
   company: [
-    { label: 'About', to: '/about' },
-    { label: 'Blog', to: '/blog' },
-    { label: 'Careers', to: '/careers' },
-    { label: 'Contact', to: '/contact' },
+    // { label: 'About', to: '/about' },
+    // { label: 'Blog', to: '/blog' },
+    // { label: 'Careers', to: '/careers' },
+    { label: 'youthsbdu@gmail.com' },
   ],
   legal: [
     { label: 'Privacy Policy', to: '/privacy' },
@@ -51,22 +51,11 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Link columns */}
+          {/* Link columns
           <div className="footer-links-group">
             <h4 className="footer-heading">Product</h4>
             <ul className="footer-links">
               {footerLinks.product.map((link) => (
-                <li key={link.to}>
-                  <Link to={link.to}>{link.label}</Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="footer-links-group">
-            <h4 className="footer-heading">Company</h4>
-            <ul className="footer-links">
-              {footerLinks.company.map((link) => (
                 <li key={link.to}>
                   <Link to={link.to}>{link.label}</Link>
                 </li>
@@ -82,6 +71,22 @@ export default function Footer() {
                   <Link to={link.to}>{link.label}</Link>
                 </li>
               ))}
+            </ul>
+          </div> */}
+          <div className="footer-links-group">
+            <h4 className="footer-heading">About</h4>
+            <ul className="footer-links">
+              {footerLinks.company.map((link) => {
+                const isEmail = /\S+@\S+\.\S+/.test(link.label); // simple email regex
+
+                return (
+                  <li key={link.to || link.label}>
+                    {link.to ? (<Link to={link.to}>{link.label}</Link>) : isEmail ? (<a href={`mailto:${link.label}`}>{link.label}</a>) : (link.label)}
+                  </li>
+                );
+              })}
+
+
             </ul>
           </div>
         </div>
