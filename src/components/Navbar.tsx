@@ -1,5 +1,5 @@
 // src/components/Navbar.tsx
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import './Navbar.css'
 
@@ -126,10 +126,42 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const [openPanel, setOpenPanel] = useState<string | null>(null)
   const [openSubPanel, setOpenSubPanel] = useState<string | null>(null)
+  const [dropdownPosition, setDropdownPosition] = useState<'left' | 'right'>('left')
+  const dropdownRef = useRef<HTMLDivElement>(null)
+
+  // Detect if viewport is wide enough to show dropdown without horizontal scroll
+  useEffect(() => {
+    const checkViewportFit = () => {
+      if (!dropdownRef.current || !openPanel) return
+
+      const rect = dropdownRef.current.getBoundingClientRect()
+      const viewportWidth = window.innerWidth
+      const spaceOnRight = viewportWidth - rect.right
+
+      // If there's not enough space on the right (less than 220px min-width), align to right
+      if (spaceOnRight < 220 && rect.left > 220) {
+        setDropdownPosition('right')
+      } else {
+        setDropdownPosition('left')
+      }
+    }
+
+    // Check on open and resize
+    if (openPanel) {
+      setTimeout(checkViewportFit, 0) // Wait for DOM to update
+      window.addEventListener('resize', checkViewportFit)
+      window.addEventListener('scroll', checkViewportFit, true)
+    }
+
+    return () => {
+      window.removeEventListener('resize', checkViewportFit)
+      window.removeEventListener('scroll', checkViewportFit, true)
+    }
+  }, [openPanel])
 
   return (
     <nav className="navbar">
-      <div className="navbar-inner">
+      <div className="navbar-inner" ref={dropdownRef}>
         <Link
           to="/"
           className="navbar-brand"
@@ -174,7 +206,13 @@ export default function Navbar() {
                   >
                     {item.label}
                   </button>
-                  <div className={`nav-panel ${openPanel === item.label ? 'is-open' : ''}`}>
+                  <div 
+                    className={`nav-panel ${openPanel === item.label ? 'is-open' : ''}`}
+                    style={{ 
+                      left: dropdownPosition === 'right' ? 'auto' : '0',
+                      right: dropdownPosition === 'right' ? '0' : 'auto'
+                    }}
+                  >
                     {renderFirstLevel(item.children, openSubPanel, setOpenSubPanel)}
                   </div>
                 </>
