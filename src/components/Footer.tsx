@@ -12,7 +12,7 @@ const footerLinks = {
   company: [
     // { label: 'About', to: '/about' },
     // { label: 'Blog', to: '/blog' },
-    // { label: 'Careers', to: '/careers' },
+    { label: 'Careers', to: '/careers' },
     { label: 'youthsbdu@gmail.com' },
   ],
   legal: [
