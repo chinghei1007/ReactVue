@@ -1,0 +1,63 @@
+[
+  {
+    "chineseName": "香港書界文藝界全港兒童中文硬筆書法大賽",
+    "englishName": "HKASA",
+    "result": "高中組冠軍",
+    "resultDate": "21-06-2024",
+    "style": "楷書"
+  },
+  {
+    "chineseName": "國際青少年書法藝術展",
+    "englishName": "IYAEA",
+    "result": "公開組冠軍",
+    "resultDate": "11-09-2024",
+    "style": "行書"
+  },
+  {
+    "chineseName": "青少年文藝交流協會 - 第九屆香港青少年書法大賽",
+    "englishName": "HKCYACA",
+    "result": "公開組亞軍",
+    "resultDate": "26-09-2024",
+    "style": "行書"
+  },
+  {
+    "chineseName": "第二屆鉛筆書寫書法比賽",
+    "englishName": "Art's Culture",
+    "result": "公開組銅獎",
+    "resultDate": "27-01-2025",
+    "style": "行書"
+  },
+  {
+    "chineseName": "第二屆飛龍館",
+    "englishName": "iCan Centre",
+    "result": "公開組冠軍",
+    "resultDate": "12-04-2024",
+    "style": "行書"
+  },
+  {
+    "chineseName": "第四屆飛龍館",
+    "englishName": "iCan Centre",
+    "result": "公開組金獎",
+    "resultDate": "30-05-2026",
+    "style": "行書"
+  },
+  {
+    "chineseName": "粵港澳大灣區書法大賽",
+    "englishName": "GBAACA",
+    "result": "公開組冠軍",
+    "resultDate": "02-12-2025",
+    "style": "行書"
+  },
+  {
+    "chineseName": "香港18區校際兒童書法比賽",
+    "englishName": "HKSNCTA",
+    "result": [
+      "觀塘區公開組冠軍",
+      "元朗區公開組冠軍", 
+      "西貢區公開組冠軍",
+      "18區校際硬筆書法比賽明星之星"
+    ],
+    "resultDate": "15-07-2026",
+    "style": "行書"
+  }
+]
