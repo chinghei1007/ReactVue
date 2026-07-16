@@ -134,10 +134,76 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const [openPanel, setOpenPanel] = useState<string | null>(null)
   const [openSubPanel, setOpenSubPanel] = useState<string | null>(null)
+  const [dropdownPositions, setDropdownPositions] = useState<Record<string, 'left' | 'right'>>({})
+  const navbarRef = useRef<HTMLDivElement>(null)
+
+  // Detect if each dropdown panel fits within viewport
+  useEffect(() => {
+    const checkViewportFit = () => {
+      if (!navbarRef.current) return
+
+      console.log("Viewport width:", window.innerWidth)
+      console.log("Viewport height:", window.innerHeight)
+
+      // Find all open nav panels
+      const openPanels = navbarRef.current.querySelectorAll('.nav-panel.is-open')
+      
+      const newPositions: Record<string, 'left' | 'right'> = {}
+
+      openPanels.forEach((panel) => {
+        const rect = panel.getBoundingClientRect()
+        const panelElement = panel as HTMLElement
+        
+        // Get the parent nav-item label to use as key
+        const navItem = panel.closest('.nav-item')
+        const button = navItem?.querySelector('.nav-link.has-dropdown') as HTMLButtonElement
+        const panelKey = button?.textContent?.trim() || ''
+
+        const spaceOnRight = window.innerWidth - rect.right
+        const spaceOnLeft = rect.left
+
+        // Check if panel overflows on right side
+        if (rect.right > window.innerWidth) {
+          // Not enough space on right, try to align to right
+          newPositions[panelKey] = 'right'
+          console.log(`Panel "${panelKey}" overflows right (right: ${rect.right}, viewport: ${window.innerWidth}) - positioning right`)
+        } 
+        // Check if panel overflows on left side (when positioned right)
+        else if (rect.left < 0) {
+          // Overflows on left, position to left
+          newPositions[panelKey] = 'left'
+          console.log(`Panel "${panelKey}" overflows left (left: ${rect.left}) - positioning left`)
+        } 
+        // Check if there's enough space on right for minimum width
+        else if (spaceOnRight < 220 && spaceOnLeft > 220) {
+          newPositions[panelKey] = 'right'
+          console.log(`Panel "${panelKey}" limited space on right (${spaceOnRight}px) - positioning right`)
+        } 
+        else {
+          newPositions[panelKey] = 'left'
+          console.log(`Panel "${panelKey}" fits well - positioning left`)
+        }
+      })
+
+      setDropdownPositions(newPositions)
+    }
+
+    // Check on open and resize
+    if (openPanel) {
+      setTimeout(checkViewportFit, 0) // Wait for DOM to update
+      window.addEventListener('resize', checkViewportFit)
+      window.addEventListener('scroll', checkViewportFit, true)
+    }
+
+    return () => {
+      window.removeEventListener('resize', checkViewportFit)
+      window.removeEventListener('scroll', checkViewportFit, true)
+    }
+  }, [openPanel])
 
   return (
     <nav className="navbar">
-      <div className="navbar-inner">
+      <div className="navbar-inner" ref={navbarRef}>
         <Link
           to="/"
           className="navbar-brand"
@@ -182,7 +248,13 @@ export default function Navbar() {
                   >
                     {item.label}
                   </button>
-                  <div className={`nav-panel ${openPanel === item.label ? 'is-open' : ''}`}>
+                  <div 
+                    className={`nav-panel ${openPanel === item.label ? 'is-open' : ''}`}
+                    style={{ 
+                      left: dropdownPositions[item.label] === 'right' ? 'auto' : '0',
+                      right: dropdownPositions[item.label] === 'right' ? '0' : 'auto'
+                    }}
+                  >
                     {renderFirstLevel(item.children, openSubPanel, setOpenSubPanel)}
                   </div>
                 </>
