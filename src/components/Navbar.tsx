@@ -126,24 +126,58 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const [openPanel, setOpenPanel] = useState<string | null>(null)
   const [openSubPanel, setOpenSubPanel] = useState<string | null>(null)
-  const [dropdownPosition, setDropdownPosition] = useState<'left' | 'right'>('left')
-  const dropdownRef = useRef<HTMLDivElement>(null)
+  const [dropdownPositions, setDropdownPositions] = useState<Record<string, 'left' | 'right'>>({})
+  const navbarRef = useRef<HTMLDivElement>(null)
 
-  // Detect if viewport is wide enough to show dropdown without horizontal scroll
+  // Detect if each dropdown panel fits within viewport
   useEffect(() => {
     const checkViewportFit = () => {
-      if (!dropdownRef.current || !openPanel) return
+      if (!navbarRef.current) return
 
-      const rect = dropdownRef.current.getBoundingClientRect()
-      const viewportWidth = window.innerWidth
-      const spaceOnRight = viewportWidth - rect.right
+      console.log("Viewport width:", window.innerWidth)
+      console.log("Viewport height:", window.innerHeight)
 
-      // If there's not enough space on the right (less than 220px min-width), align to right
-      if (spaceOnRight < 220 && rect.left > 220) {
-        setDropdownPosition('right')
-      } else {
-        setDropdownPosition('left')
-      }
+      // Find all open nav panels
+      const openPanels = navbarRef.current.querySelectorAll('.nav-panel.is-open')
+      
+      const newPositions: Record<string, 'left' | 'right'> = {}
+
+      openPanels.forEach((panel) => {
+        const rect = panel.getBoundingClientRect()
+        const panelElement = panel as HTMLElement
+        
+        // Get the parent nav-item label to use as key
+        const navItem = panel.closest('.nav-item')
+        const button = navItem?.querySelector('.nav-link.has-dropdown') as HTMLButtonElement
+        const panelKey = button?.textContent?.trim() || ''
+
+        const spaceOnRight = window.innerWidth - rect.right
+        const spaceOnLeft = rect.left
+
+        // Check if panel overflows on right side
+        if (rect.right > window.innerWidth) {
+          // Not enough space on right, try to align to right
+          newPositions[panelKey] = 'right'
+          console.log(`Panel "${panelKey}" overflows right (right: ${rect.right}, viewport: ${window.innerWidth}) - positioning right`)
+        } 
+        // Check if panel overflows on left side (when positioned right)
+        else if (rect.left < 0) {
+          // Overflows on left, position to left
+          newPositions[panelKey] = 'left'
+          console.log(`Panel "${panelKey}" overflows left (left: ${rect.left}) - positioning left`)
+        } 
+        // Check if there's enough space on right for minimum width
+        else if (spaceOnRight < 220 && spaceOnLeft > 220) {
+          newPositions[panelKey] = 'right'
+          console.log(`Panel "${panelKey}" limited space on right (${spaceOnRight}px) - positioning right`)
+        } 
+        else {
+          newPositions[panelKey] = 'left'
+          console.log(`Panel "${panelKey}" fits well - positioning left`)
+        }
+      })
+
+      setDropdownPositions(newPositions)
     }
 
     // Check on open and resize
@@ -161,7 +195,7 @@ export default function Navbar() {
 
   return (
     <nav className="navbar">
-      <div className="navbar-inner" ref={dropdownRef}>
+      <div className="navbar-inner" ref={navbarRef}>
         <Link
           to="/"
           className="navbar-brand"
@@ -209,8 +243,8 @@ export default function Navbar() {
                   <div 
                     className={`nav-panel ${openPanel === item.label ? 'is-open' : ''}`}
                     style={{ 
-                      left: dropdownPosition === 'right' ? 'auto' : '0',
-                      right: dropdownPosition === 'right' ? '0' : 'auto'
+                      left: dropdownPositions[item.label] === 'right' ? 'auto' : '0',
+                      right: dropdownPositions[item.label] === 'right' ? '0' : 'auto'
                     }}
                   >
                     {renderFirstLevel(item.children, openSubPanel, setOpenSubPanel)}
