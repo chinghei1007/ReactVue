@@ -1,5 +1,5 @@
 // src/components/Navbar.tsx
-import { useState, useRef, useEffect } from 'react'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import './Navbar.css'
 
@@ -72,8 +72,16 @@ const navItems: TopNavItem[] = [
       },
     ],
   },
-  { label: 'About', to: '/about' },
-  { label: 'Contact', to: '/contact' },
+  {
+    label: 'NextWork',
+    children: [
+      { label: 'AI Security Scanner for Python', to: 'nextwork/ai-security-scanner'}
+    ]
+  },{
+    label: '書法比賽', to: 'calligraphy-competition'
+  }
+  // { label: 'About', to: '/about' },
+  // { label: 'Contact', to: '/contact' },
 ]
 
 // --- Render helpers ---
