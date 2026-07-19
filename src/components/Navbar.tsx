@@ -147,7 +147,7 @@ export default function Navbar() {
             setOpenSubPanel(null)
           }}
         >
-          MyApp
+          Heison
         </Link>
         <button
           type="button"
