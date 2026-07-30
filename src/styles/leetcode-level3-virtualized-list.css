@@ -8,7 +8,7 @@
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
-  color: #475569;
+  color: var(--muted-text);
   font-size: 0.95rem;
 }
 
@@ -22,7 +22,7 @@
   position: relative;
   height: 26rem;
   overflow: auto;
-  background: rgba(15, 23, 42, 0.03);
+  background: var(--surface-2);
 }
 
 .virtual-row {

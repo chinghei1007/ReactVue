@@ -8,7 +8,7 @@
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
-  color: #475569;
+  color: var(--muted-text);
   font-size: 0.95rem;
 }
 
@@ -18,7 +18,7 @@
   border: 1px solid rgba(148, 163, 184, 0.35);
   border-radius: 20px;
   padding: 1rem;
-  background: rgba(15, 23, 42, 0.03);
+  background: var(--surface-2);
 }
 
 .level3-list {
@@ -29,7 +29,7 @@
 .level3-list-item {
   border-radius: 16px;
   padding: 0.85rem 1rem;
-  background: rgba(255, 255, 255, 0.72);
+  background: var(--surface);
   box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
 }
 
@@ -37,14 +37,14 @@
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
-  color: #475569;
+  color: var(--muted-text);
 }
 
 .level3-spinner {
   width: 1rem;
   height: 1rem;
   border: 2px solid rgba(71, 85, 105, 0.2);
-  border-top-color: #0f172a;
+  border-top-color: var(--theme-accent);
   border-radius: 999px;
   animation: level3-infinite-scroll-spin 0.8s linear infinite;
 }
@@ -54,7 +54,8 @@
   border: 1px solid rgba(148, 163, 184, 0.45);
   border-radius: 14px;
   padding: 0.7rem 0.95rem;
-  background: #fff;
+  background: var(--input-bg);
+  color: var(--text);
 }
 
 @keyframes level3-infinite-scroll-spin {

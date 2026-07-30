@@ -8,7 +8,7 @@
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
-  color: #475569;
+  color: var(--muted-text);
   font-size: 0.95rem;
 }
 
@@ -21,7 +21,7 @@
 .level3-column {
   border: 1px solid rgba(148, 163, 184, 0.35);
   border-radius: 20px;
-  background: rgba(15, 23, 42, 0.04);
+  background: var(--surface-2);
   padding: 1rem;
 }
 
@@ -42,14 +42,14 @@
 .kanban-card {
   border-radius: 16px;
   border: 1px solid rgba(148, 163, 184, 0.35);
-  background: rgba(255, 255, 255, 0.9);
+  background: var(--surface);
   padding: 0.85rem;
   cursor: grab;
 }
 
 .kanban-card.is-dragging,
 .kanban-drop-zone.is-over {
-  outline: 2px solid #0f172a;
+  outline: 2px solid var(--theme-accent);
 }
 
 .kanban-drop-zone {

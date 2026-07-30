@@ -12,7 +12,7 @@
   width: 100%;
   border: 1px solid rgba(148, 163, 184, 0.35);
   border-radius: 20px;
-  background: rgba(15, 23, 42, 0.04);
+  background: var(--surface-2);
   padding: 1rem;
 }
 
@@ -20,7 +20,8 @@
   border: 1px solid rgba(148, 163, 184, 0.55);
   border-radius: 14px;
   padding: 0.8rem 0.95rem;
-  background: #fff;
+  background: var(--input-bg);
+  color: var(--text);
 }
 
 .typeahead-list {
@@ -32,7 +33,7 @@
   margin-top: 0.5rem;
   border: 1px solid rgba(148, 163, 184, 0.4);
   border-radius: 16px;
-  background: #fff;
+  background: var(--surface);
   box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
 }
 
@@ -46,5 +47,5 @@
 }
 
 .typeahead-option.is-active {
-  background: #dbeafe;
+  background: var(--selected-bg);
 }

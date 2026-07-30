@@ -4,13 +4,13 @@ import { challengeSections, heroProfile } from './leetcode/challenges'
 
 export default function Home() {
   return (
-    <div className="home-page">
-      <section className="hero-panel">
+    <div className="flex flex-col gap-8">
+      <section className="rounded-3xl bg-[var(--hero-bg)] p-8 text-white">
         <SectionHeading eyebrow={heroProfile.eyebrow} title={heroProfile.title} />
-        <div className="hero-copy"> {heroProfile.description.map((text, index) => ( <p key={index}>{text}</p> ))} </div>
-        <div className="hero-tags">
+        <div className="mt-4 max-w-3xl leading-relaxed text-slate-200"> {heroProfile.description.map((text, index) => ( <p key={index}>{text}</p> ))} </div>
+        <div className="mt-5 flex flex-wrap gap-2.5">
           {heroProfile.tags.map((tag) => (
-            <span key={tag}>{tag}</span>
+            <span className="rounded-full border border-white/15 bg-white/10 px-3 py-2 text-sm text-slate-200" key={tag}>{tag}</span>
           ))}
         </div>
       </section>

@@ -6,7 +6,7 @@
 .masonry-shell {
   border: 1px solid rgba(148, 163, 184, 0.35);
   border-radius: 22px;
-  background: rgba(15, 23, 42, 0.04);
+  background: var(--surface-2);
   padding: 1rem;
 }
 
@@ -22,8 +22,8 @@
   display: inline-flex;
   border-radius: 999px;
   padding: 0.25rem 0.6rem;
-  background: #dbeafe;
-  color: #1d4ed8;
+  background: var(--selected-bg);
+  color: var(--theme-accent);
   font-size: 0.82rem;
 }
 
@@ -41,7 +41,7 @@
 .masonry-card {
   border-radius: 22px;
   overflow: hidden;
-  background: #fff;
+  background: var(--surface);
   box-shadow: 0 14px 30px rgba(15, 23, 42, 0.08);
 }
 

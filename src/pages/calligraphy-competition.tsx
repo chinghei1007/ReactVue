@@ -10,6 +10,7 @@ import type {
   ChartData
 } from '../types/calligraphy-competition';
 import competitionData from '../data/calligraphy-competition-data.json';
+import '../styles/calligraphy-competition.css';
 
 const CalligraphyCompetitionPage: React.FC = () => {
   const [sortConfig, setSortConfig] = useState<{ field: SortField; direction: SortDirection } | null>(null);
