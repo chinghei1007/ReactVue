@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react'
-import ChallengePage from '../../../customElements/ChallengePage'
-import '../../../styles/leetcode-level4-masonry-layout.css'
+import ChallengePage from '@/customElements/ChallengePage'
+import '@/styles/leetcode-level4-masonry-layout.css'
 
 type Tile = { id: number; title: string; height: number; color: string }
 

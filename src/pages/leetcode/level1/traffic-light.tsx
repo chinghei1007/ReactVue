@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import ChallengePage from '../../../customElements/ChallengePage'
-import '../../../styles/traffic-light.css'
+import ChallengePage from '@/customElements/ChallengePage'
+import '@/styles/traffic-light.css'
 
 const lights = ['red', 'yellow', 'green'] as const
 

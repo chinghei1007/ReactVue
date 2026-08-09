@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import ChallengePage from '../../../customElements/ChallengePage'
-import '../../../styles/leetcode-level3-undo-redo.css'
+import ChallengePage from '@/customElements/ChallengePage'
+import '@/styles/leetcode-level3-undo-redo.css'
 
 type HistoryState = {
   past: string[]

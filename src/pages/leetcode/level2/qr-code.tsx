@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import QRCode from 'qrcode'
-import ChallengePage from '../../../customElements/ChallengePage'
-import '../../../styles/qr-code.css'
+import ChallengePage from '@/customElements/ChallengePage'
+import '@/styles/qr-code.css'
 
 export default function QrCodePage() {
   const [text, setText] = useState('https://example.com')

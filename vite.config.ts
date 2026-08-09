@@ -7,6 +7,11 @@ import tailwindcss from '@tailwindcss/vite'
 import { cloudflare } from "@cloudflare/vite-plugin";
 
 export default defineConfig({
+  resolve: {
+    alias: {
+      '@': '/src',
+    },
+  },
   plugins: [tailwindcss(), react(), Pages({
     onRoutesGenerated(routes) {
       console.log('Generated routes:', JSON.stringify(routes, null, 2))

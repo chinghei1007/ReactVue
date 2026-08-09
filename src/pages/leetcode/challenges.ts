@@ -1,4 +1,4 @@
-import type { ChallengeCardData } from '../../customElements/ChallengeCard'
+import type { ChallengeCardData } from '@/customElements/ChallengeCard'
 
 export type ChallengeSectionData = {
   eyebrow?: string

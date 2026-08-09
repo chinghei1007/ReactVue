@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import ChallengePage from '../../../customElements/ChallengePage'
-import '../../../styles/carousel.css'
+import ChallengePage from '@/customElements/ChallengePage'
+import '@/styles/carousel.css'
 
 const slides = ['Slide one', 'Slide two', 'Slide three']
 

@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
-import ChallengePage from '../../../customElements/ChallengePage'
-import '../../../styles/leetcode-level3-mini-paint.css'
+import ChallengePage from '@/customElements/ChallengePage'
+import '@/styles/leetcode-level3-mini-paint.css'
 
 type ToolMode = 'brush' | 'eraser'
 

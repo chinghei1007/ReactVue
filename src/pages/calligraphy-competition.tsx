@@ -1,16 +1,16 @@
 import React, { useState, useMemo, useEffect } from 'react';
-import CalligraphyCompetitionTable from '../components/CalligraphyCompetitionTable';
-import CalligraphyCompetitionChart from '../components/CalligraphyCompetitionChart';
-import CalligraphyCompetitionFilters from '../components/CalligraphyCompetitionFilters';
+import CalligraphyCompetitionTable from '@/components/CalligraphyCompetitionTable';
+import CalligraphyCompetitionChart from '@/components/CalligraphyCompetitionChart';
+import CalligraphyCompetitionFilters from '@/components/CalligraphyCompetitionFilters';
 import type {
   CompetitionTableData,
   SortField,
   SortDirection,
   FilterOptions,
   ChartData
-} from '../types/calligraphy-competition';
-import competitionData from '../data/calligraphy-competition-data.json';
-import '../styles/calligraphy-competition.css';
+} from '@/types/calligraphy-competition';
+import competitionData from '@/data/calligraphy-competition-data.json';
+import '@/styles/calligraphy-competition.css';
 
 const CalligraphyCompetitionPage: React.FC = () => {
   const [sortConfig, setSortConfig] = useState<{ field: SortField; direction: SortDirection } | null>(null);
@@ -210,53 +210,26 @@ const CalligraphyCompetitionPage: React.FC = () => {
         <p className="page-subtitle">個人參加的書法比賽及獲獎記錄</p>
       </header>
 
-      <div className="competition-controls">
-        <div className="view-mode-selector">
-          <label>顯示模式:</label>
-          <select 
-            value={viewMode} 
-            onChange={(e) => setViewMode(e.target.value as 'table' | 'chart' | 'both')}
-            className="view-mode-select"
-          >
-            <option value="both">表格 + 圖表</option>
-            <option value="table">僅表格</option>
-            <option value="chart">僅圖表</option>
-          </select>
-        </div>
+      <div className="competition-table-container">
+        <CalligraphyCompetitionFilters
+          filters={filters}
+          onFilterChange={handleFilterChange}
+          availableStyles={availableStyles}
+          availableYears={availableYears}
+          availableHalfYears={availableHalfYears}
+          viewMode={viewMode}
+          onViewModeChange={setViewMode}
+        />
 
-        {viewMode !== 'table' && (
-          <div className="chart-type-selector">
-            <label>圖表類型:</label>
-            <select 
-              value={chartType} 
-              onChange={(e) => setChartType(e.target.value as 'year' | 'halfYear')}
-              className="chart-type-select"
-            >
-              <option value="year">按年份</option>
-              <option value="halfYear">按半年</option>
-            </select>
-          </div>
-        )}
-      </div>
-
-      <CalligraphyCompetitionFilters
-        filters={filters}
-        onFilterChange={handleFilterChange}
-        availableStyles={availableStyles}
-        availableYears={availableYears}
-        availableHalfYears={availableHalfYears}
-      />
-
-      {viewMode !== 'chart' && (
-        <section className="competition-table-section">
+        {viewMode !== 'chart' && (
           <CalligraphyCompetitionTable
             data={filteredData}
             onSort={handleSort}
             currentSort={sortConfig}
             filters={filters}
           />
-        </section>
-      )}
+        )}
+      </div>
 
       {viewMode !== 'table' && (
         <section className="competition-chart-section">
@@ -264,6 +237,7 @@ const CalligraphyCompetitionPage: React.FC = () => {
             chartData={chartData}
             title={chartType === 'year' ? '書法比賽參加數量 (按年份)' : '書法比賽參加數量 (按半年)'}
             type={chartType}
+            onTypeChange={setChartType}
           />
         </section>
       )}

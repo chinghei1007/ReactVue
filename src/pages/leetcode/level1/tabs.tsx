@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import ChallengePage from '../../../customElements/ChallengePage'
-import '../../../styles/tabs.css'
+import ChallengePage from '@/customElements/ChallengePage'
+import '@/styles/tabs.css'
 
 const tabs = [
   { id: 'overview', label: 'Overview', body: 'This tab shows the summary.' },

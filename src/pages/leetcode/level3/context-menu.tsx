@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
-import ChallengePage from '../../../customElements/ChallengePage'
-import '../../../styles/leetcode-level3-context-menu.css'
+import ChallengePage from '@/customElements/ChallengePage'
+import '@/styles/leetcode-level3-context-menu.css'
 
 type MenuPosition = { x: number; y: number } | null
 

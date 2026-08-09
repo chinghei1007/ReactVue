@@ -1,24 +1,39 @@
 import React from 'react';
-import type { ChartData } from '../types/calligraphy-competition';
+import type { Chart } from 'chart.js';
+import type { ChartData } from '@/types/calligraphy-competition';
+import { useTheme } from '@/theme/ThemeContext';
+
+/* eslint-disable react-hooks/immutability -- Chart.js updates its chart instance imperatively. */
 
 interface CalligraphyCompetitionChartProps {
   chartData: ChartData;
   title: string;
   type: 'year' | 'halfYear';
+  onTypeChange: (type: 'year' | 'halfYear') => void;
 }
 
 const CalligraphyCompetitionChart: React.FC<CalligraphyCompetitionChartProps> = ({
   chartData,
   title,
-  type
+  type,
+  onTypeChange
 }) => {
   const canvasRef = React.useRef<HTMLCanvasElement>(null);
-  const chartRef = React.useRef<any>(null);
+  const chartRef = React.useRef<Chart<'line'> | null>(null);
+  const latestChartDataRef = React.useRef(chartData);
+  const latestTitleRef = React.useRef(title);
   const [error, setError] = React.useState<string | null>(null);
+  const { theme } = useTheme();
+
+  React.useEffect(() => {
+    latestChartDataRef.current = chartData;
+    latestTitleRef.current = title;
+  }, [chartData, title]);
 
   React.useEffect(() => {
     const ctx = canvasRef.current;
     if (!ctx) return;
+    let cancelled = false;
 
     // Destroy previous chart instance
     if (chartRef.current) {
@@ -32,16 +47,23 @@ const CalligraphyCompetitionChart: React.FC<CalligraphyCompetitionChartProps> = 
         const { Chart: ChartJS, registerables } = await import('chart.js');
         ChartJS.register(...registerables);
 
+        // Dynamic imports can finish after cleanup during Strict Mode's effect replay.
+        if (cancelled || canvasRef.current !== ctx) return;
+
+        // Defensively release any instance created by an older async effect.
+        ChartJS.getChart(ctx)?.destroy();
+
         const textColor = getComputedStyle(document.documentElement).getPropertyValue('--text').trim() || '#e2e8f0';
         const mutedTextColor = getComputedStyle(document.documentElement).getPropertyValue('--muted-text').trim() || '#c4cfdf';
         const borderColor = getComputedStyle(document.documentElement).getPropertyValue('--border-color').trim() || 'rgba(148, 163, 184, 0.25)';
         const bgColor = getComputedStyle(document.documentElement).getPropertyValue('--bg').trim() || '#020617';
 
-        chartRef.current = new ChartJS(ctx, {
+        const initialChartData = latestChartDataRef.current;
+        const chart = new ChartJS(ctx, {
           type: 'line',
           data: {
-            ...chartData,
-            datasets: chartData.datasets.map(dataset => ({
+            ...initialChartData,
+            datasets: initialChartData.datasets.map(dataset => ({
               ...dataset,
               borderColor: textColor,
               backgroundColor: textColor,
@@ -67,7 +89,7 @@ const CalligraphyCompetitionChart: React.FC<CalligraphyCompetitionChartProps> = 
               },
               title: {
                 display: true,
-                text: title,
+                text: latestTitleRef.current,
                 color: textColor,
                 font: {
                   size: 16,
@@ -110,8 +132,10 @@ const CalligraphyCompetitionChart: React.FC<CalligraphyCompetitionChartProps> = 
             }
           }
         });
+        chartRef.current = chart;
         setError(null);
       } catch (err) {
+        if (cancelled) return;
         setError('無法加載圖表庫');
         console.error('Failed to load Chart.js:', err);
       }
@@ -120,11 +144,35 @@ const CalligraphyCompetitionChart: React.FC<CalligraphyCompetitionChartProps> = 
     initChart();
 
     return () => {
+      cancelled = true;
       if (chartRef.current) {
         chartRef.current.destroy();
         chartRef.current = null;
       }
     };
+  }, []);
+
+  // Keep the same Chart.js instance so existing points animate to their new
+  // horizontal and vertical positions instead of growing again from zero.
+  React.useEffect(() => {
+    const chart = chartRef.current;
+    if (!chart) return;
+
+    chart.data.labels = [...chartData.labels];
+
+    chartData.datasets.forEach((nextDataset, index) => {
+      const currentDataset = chart.data.datasets[index];
+      if (!currentDataset) return;
+
+      currentDataset.label = nextDataset.label;
+      currentDataset.data = [...nextDataset.data];
+      currentDataset.fill = nextDataset.fill;
+    });
+
+    const chartTitle = chart.options.plugins?.title;
+    if (chartTitle) chartTitle.text = title;
+
+    chart.update();
   }, [chartData, title]);
 
   // Update chart when theme changes
@@ -138,12 +186,17 @@ const CalligraphyCompetitionChart: React.FC<CalligraphyCompetitionChartProps> = 
       const borderColor = getComputedStyle(document.documentElement).getPropertyValue('--border-color').trim() || 'rgba(148, 163, 184, 0.25)';
       const bgColor = getComputedStyle(document.documentElement).getPropertyValue('--bg').trim() || '#020617';
 
-      chart.options.plugins.legend.labels.color = textColor;
-      chart.options.plugins.title.color = textColor;
-      chart.options.scales.x.grid.color = borderColor;
-      chart.options.scales.x.ticks.color = mutedTextColor;
-      chart.options.scales.y.grid.color = borderColor;
-      chart.options.scales.y.ticks.color = mutedTextColor;
+      const legendLabels = chart.options.plugins?.legend?.labels;
+      const chartTitle = chart.options.plugins?.title;
+      const xScale = chart.options.scales?.x;
+      const yScale = chart.options.scales?.y;
+
+      if (legendLabels) legendLabels.color = textColor;
+      if (chartTitle) chartTitle.color = textColor;
+      if (xScale?.grid) xScale.grid.color = borderColor;
+      if (xScale?.ticks) xScale.ticks.color = mutedTextColor;
+      if (yScale?.grid) yScale.grid.color = borderColor;
+      if (yScale?.ticks) yScale.ticks.color = mutedTextColor;
       
       if (chart.data.datasets[0]) {
         chart.data.datasets[0].borderColor = textColor;
@@ -154,7 +207,7 @@ const CalligraphyCompetitionChart: React.FC<CalligraphyCompetitionChartProps> = 
 
       chart.update();
     }
-  }, []);
+  }, [theme]);
 
   if (error) {
     return (
@@ -169,6 +222,28 @@ const CalligraphyCompetitionChart: React.FC<CalligraphyCompetitionChartProps> = 
 
   return (
     <div className="competition-chart-container">
+      <div className="chart-type-radio-group" role="radiogroup" aria-label="圖表類型">
+        <label>
+          <input
+            type="radio"
+            name="competition-chart-type"
+            value="year"
+            checked={type === 'year'}
+            onChange={() => onTypeChange('year')}
+          />
+          按一年
+        </label>
+        <label>
+          <input
+            type="radio"
+            name="competition-chart-type"
+            value="halfYear"
+            checked={type === 'halfYear'}
+            onChange={() => onTypeChange('halfYear')}
+          />
+          按半年
+        </label>
+      </div>
       <div className="chart-wrapper">
         <canvas ref={canvasRef} />
       </div>

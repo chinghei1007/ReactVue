@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react'
-import ChallengePage from '../../../customElements/ChallengePage'
-import '../../../styles/tic-tac-toe.css'
+import ChallengePage from '@/customElements/ChallengePage'
+import '@/styles/tic-tac-toe.css'
 
 const lines = [
   [0, 1, 2],

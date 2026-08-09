@@ -1,5 +1,5 @@
 import React from 'react';
-import type { CompetitionTableData, SortField, SortDirection, FilterOptions } from '../types/calligraphy-competition';
+import type { CompetitionTableData, SortField, SortDirection, FilterOptions } from '@/types/calligraphy-competition';
 
 interface CalligraphyCompetitionTableProps {
   data: CompetitionTableData[];
@@ -32,7 +32,7 @@ const CalligraphyCompetitionTable: React.FC<CalligraphyCompetitionTableProps> = 
   };
 
   return (
-    <div className="competition-table-container">
+    <div className="competition-table-content">
       <div className="table-responsive">
         <table className="competition-table">
           <thead>

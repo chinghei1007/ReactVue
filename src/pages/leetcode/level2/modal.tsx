@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import ChallengePage from '../../../customElements/ChallengePage'
-import '../../../styles/modal.css'
+import ChallengePage from '@/customElements/ChallengePage'
+import '@/styles/modal.css'
 
 export default function ModalPage() {
   const [open, setOpen] = useState(false)

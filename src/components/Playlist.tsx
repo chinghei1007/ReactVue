@@ -1,5 +1,5 @@
 import { useState } from "react";
-import type { PlaylistResponse, PlaylistItem } from "../ytdlp";
+import type { PlaylistResponse, PlaylistItem } from "@/ytdlp";
 
 export default function Playlist() {
   const [url, setUrl] = useState("");

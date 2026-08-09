@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import ChallengePage from '../../../customElements/ChallengePage'
-import '../../../styles/leetcode-level3-wizard-form.css'
+import ChallengePage from '@/customElements/ChallengePage'
+import '@/styles/leetcode-level3-wizard-form.css'
 
 type FormState = {
   name: string

@@ -1,6 +1,6 @@
 // src/components/Footer.tsx
 import { Link } from 'react-router-dom'
-import './Footer.css'
+import '@/components/Footer.css'
 
 const footerLinks = {
   product: [

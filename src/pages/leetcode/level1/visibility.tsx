@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import ChallengePage from '../../../customElements/ChallengePage'
-import '../../../styles/visibility.css'
+import ChallengePage from '@/customElements/ChallengePage'
+import '@/styles/visibility.css'
 
 type VisibilityMode = 'remove' | 'collapse'
 

@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import ChallengePage from '../../../customElements/ChallengePage'
-import '../../../styles/tooltip.css'
+import ChallengePage from '@/customElements/ChallengePage'
+import '@/styles/tooltip.css'
 
 export default function TooltipPage() {
   const [show, setShow] = useState(false)

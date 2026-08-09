@@ -1,6 +1,6 @@
-import SectionHeading from '../customElements/SectionHeading'
-import FoldableChallengeSection from '../customElements/FoldableChallengeSection'
-import { challengeSections, heroProfile } from './leetcode/challenges'
+import SectionHeading from '@/customElements/SectionHeading'
+import FoldableChallengeSection from '@/customElements/FoldableChallengeSection'
+import { challengeSections, heroProfile } from '@/pages/leetcode/challenges'
 
 export default function Home() {
   return (

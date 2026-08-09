@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
-import ChallengePage from '../../../customElements/ChallengePage'
-import '../../../styles/memory-card.css'
+import ChallengePage from '@/customElements/ChallengePage'
+import '@/styles/memory-card.css'
 
 const symbols = ['🍎', '🍌', '🍇', '🍓']
 

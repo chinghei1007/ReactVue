@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import ChallengePage from '../../../customElements/ChallengePage'
-import '../../../styles/pagination.css'
+import ChallengePage from '@/customElements/ChallengePage'
+import '@/styles/pagination.css'
 
 const items = Array.from({ length: 25 }, (_, index) => `Item ${index + 1}`)
 

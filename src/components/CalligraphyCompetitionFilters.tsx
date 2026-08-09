@@ -1,5 +1,5 @@
 import React from 'react';
-import type { FilterOptions } from '../types/calligraphy-competition';
+import type { FilterOptions } from '@/types/calligraphy-competition';
 
 interface CalligraphyCompetitionFiltersProps {
   filters: FilterOptions;
@@ -7,6 +7,8 @@ interface CalligraphyCompetitionFiltersProps {
   availableStyles: string[];
   availableYears: number[];
   availableHalfYears: string[];
+  viewMode: 'table' | 'chart' | 'both';
+  onViewModeChange: (viewMode: 'table' | 'chart' | 'both') => void;
 }
 
 const CalligraphyCompetitionFilters: React.FC<CalligraphyCompetitionFiltersProps> = ({
@@ -14,7 +16,9 @@ const CalligraphyCompetitionFilters: React.FC<CalligraphyCompetitionFiltersProps
   onFilterChange,
   availableStyles,
   availableYears,
-  availableHalfYears
+  availableHalfYears,
+  viewMode,
+  onViewModeChange
 }) => {
   const [isExpanded, setIsExpanded] = React.useState(false);
 
@@ -59,7 +63,7 @@ const CalligraphyCompetitionFilters: React.FC<CalligraphyCompetitionFiltersProps
   return (
     <div className="competition-filters">
       <div className="filters-header" onClick={() => setIsExpanded(!isExpanded)}>
-        <span>🔍 篩選器</span>
+        <span>篩選器</span>
         {activeFiltersCount > 0 && (
           <span className="active-filters-badge">{activeFiltersCount}</span>
         )}
@@ -76,6 +80,20 @@ const CalligraphyCompetitionFilters: React.FC<CalligraphyCompetitionFiltersProps
 
       {isExpanded && (
         <div className="filters-content">
+          <div className="filter-group">
+            <label htmlFor="view-mode">顯示模式:</label>
+            <select
+              id="view-mode"
+              value={viewMode}
+              onChange={(e) => onViewModeChange(e.target.value as 'table' | 'chart' | 'both')}
+              className="filter-select"
+            >
+              <option value="both">表格 + 圖表</option>
+              <option value="table">僅表格</option>
+              <option value="chart">僅圖表</option>
+            </select>
+          </div>
+
           <div className="filter-group">
             <label htmlFor="search">搜索:</label>
             <input

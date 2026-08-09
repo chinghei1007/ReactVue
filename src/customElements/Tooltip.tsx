@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./tooltip.css";
+import "@/customElements/tooltip.css";
 
 type TooltipProps = {
     label: string;

@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react'
-import ChallengeCard, { type ChallengeCardData } from './ChallengeCard'
+import ChallengeCard, { type ChallengeCardData } from '@/customElements/ChallengeCard'
 
 type FoldableChallengeSectionProps = {
   sections: {

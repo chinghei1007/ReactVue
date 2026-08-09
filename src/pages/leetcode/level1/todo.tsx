@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import ChallengePage from '../../../customElements/ChallengePage'
-import '../../../styles/todo.css'
+import ChallengePage from '@/customElements/ChallengePage'
+import '@/styles/todo.css'
 
 type Todo = { id: number; text: string; done: boolean }
 

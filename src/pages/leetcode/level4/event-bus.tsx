@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import ChallengePage from '../../../customElements/ChallengePage'
-import '../../../styles/leetcode-level4-event-bus.css'
+import ChallengePage from '@/customElements/ChallengePage'
+import '@/styles/leetcode-level4-event-bus.css'
 
 type ToastKind = 'info' | 'success' | 'error'
 type Toast = { id: number; message: string; kind: ToastKind }

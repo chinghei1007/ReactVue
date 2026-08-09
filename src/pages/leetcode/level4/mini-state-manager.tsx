@@ -1,6 +1,6 @@
 import { useSyncExternalStore } from 'react'
-import ChallengePage from '../../../customElements/ChallengePage'
-import '../../../styles/leetcode-level4-mini-state-manager.css'
+import ChallengePage from '@/customElements/ChallengePage'
+import '@/styles/leetcode-level4-mini-state-manager.css'
 
 type StoreState = {
   count: number

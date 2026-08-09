@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react'
-import ChallengePage from '../../../customElements/ChallengePage'
-import '../../../styles/leetcode-level3-virtualized-list.css'
+import ChallengePage from '@/customElements/ChallengePage'
+import '@/styles/leetcode-level3-virtualized-list.css'
 
 const rowHeight = 48
 const totalItems = 10000

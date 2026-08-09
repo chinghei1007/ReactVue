@@ -1,6 +1,6 @@
 import { memo, useEffect, useMemo, useRef, useState } from 'react'
-import ChallengePage from '../../../customElements/ChallengePage'
-import '../../../styles/leetcode-level4-data-grid.css'
+import ChallengePage from '@/customElements/ChallengePage'
+import '@/styles/leetcode-level4-data-grid.css'
 
 const rowCount = 100
 const columnCount = 20

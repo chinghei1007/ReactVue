@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import ChallengePage from '../../../customElements/ChallengePage'
-import '../../../styles/star-rating.css'
+import ChallengePage from '@/customElements/ChallengePage'
+import '@/styles/star-rating.css'
 
 export default function StarRatingPage() {
   const [rating, setRating] = useState(3)

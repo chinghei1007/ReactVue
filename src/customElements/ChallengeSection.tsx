@@ -1,5 +1,5 @@
-import ChallengeCard, { type ChallengeCardData } from './ChallengeCard'
-import SectionHeading from './SectionHeading'
+import ChallengeCard, { type ChallengeCardData } from '@/customElements/ChallengeCard'
+import SectionHeading from '@/customElements/SectionHeading'
 
 type ChallengeSectionProps = {
   eyebrow?: string

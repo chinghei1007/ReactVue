@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react'
-import ChallengePage from '../../../customElements/ChallengePage'
-import '../../../styles/leetcode-level3-kanban.css'
+import ChallengePage from '@/customElements/ChallengePage'
+import '@/styles/leetcode-level3-kanban.css'
 
 type ColumnId = 'backlog' | 'inProgress' | 'done'
 type Card = { id: string; title: string }

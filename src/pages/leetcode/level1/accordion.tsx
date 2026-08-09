@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import ChallengePage from '../../../customElements/ChallengePage'
-import '../../../styles/accordion.css'
+import ChallengePage from '@/customElements/ChallengePage'
+import '@/styles/accordion.css'
 
 const items = [
   { title: 'What is React state?', body: 'State stores data that changes over time and triggers re-rendering when updated.' },

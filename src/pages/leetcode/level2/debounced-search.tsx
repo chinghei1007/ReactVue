@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
-import ChallengePage from '../../../customElements/ChallengePage'
-import '../../../styles/debounced-search.css'
+import ChallengePage from '@/customElements/ChallengePage'
+import '@/styles/debounced-search.css'
 
 const names = ['Ada', 'Alan', 'Grace', 'Linus', 'Edsger', 'Barbara', 'Donald', 'Margaret', 'Ken', 'Bjarne']
 

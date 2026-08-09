@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react'
-import ChallengePage from '../../../customElements/ChallengePage'
-import '../../../styles/form-validation.css'
+import ChallengePage from '@/customElements/ChallengePage'
+import '@/styles/form-validation.css'
 
 export default function FormValidationPage() {
   const [form, setForm] = useState({ name: '', email: '', password: '', confirm: '' })

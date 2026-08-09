@@ -92,8 +92,7 @@
 /* Filters */
 .competition-filters {
   background: var(--surface);
-  border-radius: 12px;
-  border: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
   overflow: hidden;
 }
 
@@ -225,15 +224,15 @@
 }
 
 /* Table */
-.competition-table-section {
+.competition-table-container {
   background: var(--surface);
   border-radius: 12px;
   border: 1px solid var(--border-color);
   overflow: hidden;
 }
 
-.competition-table-container {
-  padding: 1rem;
+.competition-table-content {
+  padding: 0;
 }
 
 .table-responsive {
@@ -263,7 +262,7 @@
 
 .competition-table th,
 .competition-table td {
-  padding: 0.75rem 1rem;
+  padding: 0.75rem;
   text-align: left;
   border-bottom: 1px solid var(--border-color);
 }
@@ -276,14 +275,6 @@
   position: sticky;
   top: 0;
   z-index: 10;
-}
-
-.competition-table th:first-child {
-  border-top-left-radius: 8px;
-}
-
-.competition-table th:last-child {
-  border-top-right-radius: 8px;
 }
 
 .sortable-header {
@@ -339,7 +330,7 @@
 
 .competition-table .style-cell {
   color: var(--text);
-  font-weight: 500;
+  font-weight: 400;
   min-width: 80px;
 }
 
@@ -351,7 +342,7 @@
 
 .competition-table .year-cell {
   color: var(--text);
-  font-weight: 500;
+  font-weight: 400;
   white-space: nowrap;
   min-width: 60px;
 }
@@ -388,6 +379,28 @@
 
 .competition-chart-container {
   padding: 1rem;
+}
+
+.chart-type-radio-group {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+  color: var(--text);
+  font-size: 0.9rem;
+}
+
+.chart-type-radio-group label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  cursor: pointer;
+}
+
+.chart-type-radio-group input {
+  margin: 0;
+  accent-color: #2563eb;
+  cursor: pointer;
 }
 
 .chart-wrapper {

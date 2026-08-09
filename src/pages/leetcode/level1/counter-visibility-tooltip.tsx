@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import "./counter-visibility-tooltip.css";
-import Tooltip from "../../../customElements/Tooltip";
+import "@/pages/leetcode/level1/counter-visibility-tooltip.css";
+import Tooltip from "@/customElements/Tooltip";
 
 export default function Counter() {
   const [count, setCount] = useState<number>(0);

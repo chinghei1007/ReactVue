@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import ChallengePage from '../../../customElements/ChallengePage'
-import '../../../styles/leetcode-level4-custom-router.css'
+import ChallengePage from '@/customElements/ChallengePage'
+import '@/styles/leetcode-level4-custom-router.css'
 
 type RouteMatch =
   | { name: 'home'; params: Record<string, string> }

@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react'
 import { marked } from 'marked'
-import ChallengePage from '../../../customElements/ChallengePage'
-import '../../../styles/leetcode-level4-markdown-previewer.css'
+import ChallengePage from '@/customElements/ChallengePage'
+import '@/styles/leetcode-level4-markdown-previewer.css'
 
 const initialMarkdown = `# Live Preview
 

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import ChallengePage from '../../../customElements/ChallengePage'
-import '../../../styles/counter.css'
+import ChallengePage from '@/customElements/ChallengePage'
+import '@/styles/counter.css'
 
 export default function CounterPage() {
   const [count, setCount] = useState(0)

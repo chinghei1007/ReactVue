@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
-import ChallengePage from '../../../customElements/ChallengePage'
-import '../../../styles/stopwatch.css'
+import ChallengePage from '@/customElements/ChallengePage'
+import '@/styles/stopwatch.css'
 
 export default function StopwatchPage() {
   const [elapsed, setElapsed] = useState(0)

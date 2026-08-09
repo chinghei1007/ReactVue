@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
-import ChallengePage from '../../../customElements/ChallengePage'
-import '../../../styles/leetcode-level3-autocomplete.css'
+import ChallengePage from '@/customElements/ChallengePage'
+import '@/styles/leetcode-level3-autocomplete.css'
 
 const commandItems = Array.from({ length: 500 }, (_, index) => `Command Palette Item ${String(index + 1).padStart(3, '0')}`)
 
