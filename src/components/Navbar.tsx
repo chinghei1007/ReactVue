@@ -73,10 +73,15 @@ const navItems: TopNavItem[] = [
     ],
   },
   {
-    label: 'NextWork',
+    label: 'Other Projects',
     children: [
-      { label: 'AI Security Scanner for Python', to: 'nextwork/ai-security-scanner'}
-    ]
+      {
+        label: 'NextWork',
+        children: [
+          { label: 'AI Security Scanner for Python', to: '/nextwork/ai-security-scanner' },
+        ],
+      },
+    ],
   },{
     label: '書法比賽', to: 'calligraphy-competition'
   }
