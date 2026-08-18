@@ -10,7 +10,7 @@ export default function PaginationPage() {
   const start = (page - 1) * pageSize
 
   return (
-    <ChallengePage eyebrow="Level 2" title="Pagination Component" summary="Move through a longer list page by page.">
+    <ChallengePage className="pagination-page" eyebrow="Level 2" title="Pagination Component" summary="Move through a longer list page by page.">
       <div className="challenge-demo">
         <ul className="challenge-list">
           {items.slice(start, start + pageSize).map((item) => <li key={item}>{item}</li>)}

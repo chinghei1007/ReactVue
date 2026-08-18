@@ -1,12 +1,21 @@
 .counter-container {
   padding: 1rem;
   text-align: center;
-  background: #212529;
-  color: #fff;
+  background: var(--color-content);
+  color: var(--color-page);
   border-radius: 0.5rem;
   max-width: 300px;
   margin: 1rem auto;
   position: relative;
+}
+
+.counter-heading {
+  margin: 0 0 var(--space-4);
+  font-size: 1.75rem;
+}
+
+.counter-box {
+  transition: opacity var(--transition-fast);
 }
 
 
@@ -29,33 +38,33 @@
   transition: background 0.2s, color 0.2s;
 }
 
-.counter-btn.increment {
-  background: #28a745;
-  color: #fff;
+.counter-btn--increment {
+  background: var(--button-success);
+  color: var(--button-text);
 }
 
-.counter-btn.increment:hover {
-  background: #218838;
+.counter-btn--increment:hover {
+  background: var(--button-success-hover);
 }
 
-.counter-btn.decrement {
-  background: #dc3545;
-  color: #fff;
+.counter-btn--decrement {
+  background: var(--button-danger);
+  color: var(--button-text);
 }
 
-.counter-btn.decrement:hover {
-  background: #c82333;
+.counter-btn--decrement:hover {
+  background: var(--button-danger-hover);
 }
 
 .counter-rate {
   margin-top: 1rem;
 }
 
-.rate-input {
+.counter-rate-input {
   width: 60px;
   padding: 0.25rem;
   border-radius: 0.25rem;
-  border: 1px solid #ccc;
+  border: 1px solid var(--color-border);
   text-align: center;
 }
 
@@ -63,15 +72,15 @@
   margin-top: 1rem;
 }
 
-.opacity-slider {
+.counter-opacity-slider {
   width: 100%;
   margin-top: 0.5rem;
 }
 
-.counter-container.low-opacity {
+.counter-container.is-low-opacity {
   transition: background 0.2s ease;
 }
 
-.counter-container.low-opacity:hover {
-  background: #2c0000;
+.counter-container.is-low-opacity:hover {
+  background: var(--color-danger-soft);
 }

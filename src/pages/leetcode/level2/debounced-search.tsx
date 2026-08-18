@@ -16,7 +16,7 @@ export default function DebouncedSearchPage() {
   const results = useMemo(() => names.filter((name) => name.toLowerCase().includes(debouncedQuery.toLowerCase())), [debouncedQuery])
 
   return (
-    <ChallengePage eyebrow="Level 2" title="Debounced Search Filter" summary="Filter a list without running the search on every keystroke.">
+    <ChallengePage className="debounced-search-page" eyebrow="Level 2" title="Debounced Search Filter" summary="Filter a list without running the search on every keystroke.">
       <div className="challenge-demo">
         <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search names" />
         <p className="challenge-copy">Searching for: {debouncedQuery || '...'}</p>

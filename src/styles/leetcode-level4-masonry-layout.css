@@ -1,12 +1,7 @@
-.level4-shell {
-  display: grid;
-  gap: 1.5rem;
-}
-
 .masonry-shell {
-  border: 1px solid rgba(148, 163, 184, 0.35);
+  border: 1px solid var(--color-border);
   border-radius: 22px;
-  background: var(--surface-2);
+  background: var(--color-surface-subtle);
   padding: 1rem;
 }
 
@@ -22,8 +17,8 @@
   display: inline-flex;
   border-radius: 999px;
   padding: 0.25rem 0.6rem;
-  background: var(--selected-bg);
-  color: var(--theme-accent);
+  background: var(--color-selected);
+  color: var(--color-accent);
   font-size: 0.82rem;
 }
 
@@ -39,17 +34,17 @@
 }
 
 .masonry-card {
+  border: 1px solid var(--color-border);
   border-radius: 22px;
   overflow: hidden;
-  background: var(--surface);
-  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.08);
+  background: var(--color-surface);
 }
 
 .masonry-visual {
   display: grid;
   place-items: end start;
   padding: 1rem;
-  color: #fff;
+  color: var(--color-on-accent);
   font-weight: 600;
 }
 

@@ -1,11 +1,4 @@
-@import './leetcode-level2-common.css';
-
-.tic-tac-toe-page {
-  display: grid;
-  gap: 1rem;
-}
-
-.challenge-grid {
+.tic-tac-toe-grid {
   position: relative;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -14,19 +7,19 @@
   margin: 0 auto;
 }
 
-.challenge-grid button {
+.tic-tac-toe-grid button {
   aspect-ratio: 1;
   font-size: 2rem;
   font-weight: bold;
   border-radius: 8px;
 }
 
-.challenge-grid .winning-cell {
+.tic-tac-toe-grid .is-winning {
   background-color: var(--button-danger) !important;
-  color: white;
+  color: var(--color-on-accent);
 }
 
-.winning-line {
+.tic-tac-toe-winning-line {
   position: absolute;
   top: 0;
   left: 0;
@@ -37,60 +30,60 @@
 }
 
 /* Horizontal lines */
-.winning-line[data-line='[0,1,2]'] {
+.tic-tac-toe-winning-line[data-line='[0,1,2]'] {
   top: 16.67%;
   height: 4px;
-  background: red;
+  background: var(--color-danger);
   left: 5%;
   right: 5%;
 }
 
-.winning-line[data-line='[3,4,5]'] {
+.tic-tac-toe-winning-line[data-line='[3,4,5]'] {
   top: 50%;
   height: 4px;
-  background: red;
+  background: var(--color-danger);
   left: 5%;
   right: 5%;
   transform: translateY(-50%);
 }
 
-.winning-line[data-line='[6,7,8]'] {
+.tic-tac-toe-winning-line[data-line='[6,7,8]'] {
   top: 83.33%;
   height: 4px;
-  background: red;
+  background: var(--color-danger);
   left: 5%;
   right: 5%;
 }
 
 /* Vertical lines */
-.winning-line[data-line='[0,3,6]'] {
+.tic-tac-toe-winning-line[data-line='[0,3,6]'] {
   left: 16.67%;
   width: 4px;
-  background: red;
+  background: var(--color-danger);
   top: 5%;
   bottom: 5%;
 }
 
-.winning-line[data-line='[1,4,7]'] {
+.tic-tac-toe-winning-line[data-line='[1,4,7]'] {
   left: 50%;
   width: 4px;
-  background: red;
+  background: var(--color-danger);
   top: 5%;
   bottom: 5%;
   transform: translateX(-50%);
 }
 
-.winning-line[data-line='[2,5,8]'] {
+.tic-tac-toe-winning-line[data-line='[2,5,8]'] {
   left: 83.33%;
   width: 4px;
-  background: red;
+  background: var(--color-danger);
   top: 5%;
   bottom: 5%;
 }
 
 /* Diagonal lines */
-.winning-line[data-line='[0,4,8]'] {
-  background: red;
+.tic-tac-toe-winning-line[data-line='[0,4,8]'] {
+  background: var(--color-danger);
   height: 4px;
   width: 90%;
   top: 50%;
@@ -99,8 +92,8 @@
   transform-origin: left center;
 }
 
-.winning-line[data-line='[2,4,6]'] {
-  background: red;
+.tic-tac-toe-winning-line[data-line='[2,4,6]'] {
+  background: var(--color-danger);
   height: 4px;
   width: 90%;
   top: 50%;

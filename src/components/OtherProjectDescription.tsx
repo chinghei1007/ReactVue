@@ -8,21 +8,18 @@ export default function OtherProjectDescription({ items }: OtherProjectDescripti
   if (items.length === 0) return null
 
   return (
-    <section
-      className="mt-8 rounded-3xl bg-[var(--hero-bg)] p-8 text-white"
-      aria-label="Project description"
-    >
-      <header>
-        <p className="m-0 text-xs font-semibold tracking-[0.12em] text-content-muted uppercase">
+    <section className="hero-panel project-description" aria-label="Project description">
+      <header className="section-heading">
+        <p className="section-heading-eyebrow">
           Description
         </p>
       </header>
 
-      <div className="mt-6 flex flex-col gap-6">
+      <div className="project-description-list">
         {items.map((item) => (
           <article key={item.title}>
-            <h2 className="m-0 text-xl font-semibold text-white">{item.title}</h2>
-            <p className="mt-2 mb-0 leading-relaxed text-slate-200">{item.description}</p>
+            <h2 className="project-description-title">{item.title}</h2>
+            <p className="project-description-copy">{item.description}</p>
           </article>
         ))}
       </div>

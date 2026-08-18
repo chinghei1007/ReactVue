@@ -45,7 +45,7 @@ export default function Counter() {
 
   return (
     <div>
-    <section className={`counter-container ${opacity < 10 ? "low-opacity" : ""}`}>
+    <section className={`counter-container ${opacity < 10 ? "is-low-opacity" : ""}`}>
       <h1 className="counter-heading">Counter</h1>
 
       <div
@@ -55,10 +55,10 @@ export default function Counter() {
         <h2 className="counter-value">Value: {count}</h2>
 
         <div className="counter-controls">
-          <button className="counter-btn decrement" onClick={decrement}>
+          <button className="counter-btn counter-btn--decrement" onClick={decrement}>
             - Decrement
           </button>
-          <button className="counter-btn increment" onClick={increment}>
+          <button className="counter-btn counter-btn--increment" onClick={increment}>
             + Increment
           </button>
         </div>
@@ -70,7 +70,7 @@ export default function Counter() {
               type="number"
               value={rate}
               onChange={handleRateChange}
-              className="rate-input"
+              className="counter-rate-input"
             />
           </label>
         </div>
@@ -85,12 +85,12 @@ export default function Counter() {
             max="100"
             value={opacity}
             onChange={handleOpacityChange}
-            className="opacity-slider"
+            className="counter-opacity-slider"
           />
         </label>
       </div>
 
-      <Tooltip className="question-tooltip" label="Hover Over Me">
+      <Tooltip label="Hover Over Me">
         This is a test tooltip with custom element
       </Tooltip>
     </section>

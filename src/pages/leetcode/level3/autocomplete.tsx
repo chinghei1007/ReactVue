@@ -38,7 +38,7 @@ export default function AutocompletePage() {
       title="Autocomplete / Typeahead"
       summary="Filter 500 local options, navigate with the keyboard, and confirm with Enter."
     >
-      <div className="level3-shell">
+      <div className="level-3-shell">
         <div className="typeahead">
           <input
             value={query}
@@ -85,7 +85,7 @@ export default function AutocompletePage() {
             </div>
           ) : null}
         </div>
-        <div className="level3-card">
+        <div className="typeahead-card">
           <strong>Selected value</strong>
           <p>{selectedValue || 'Nothing selected yet.'}</p>
         </div>

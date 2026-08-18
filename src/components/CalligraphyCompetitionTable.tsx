@@ -16,7 +16,7 @@ const CalligraphyCompetitionTable: React.FC<CalligraphyCompetitionTableProps> = 
 }) => {
   const getSortIcon = (field: SortField) => {
     if (currentSort?.field !== field) {
-      return <span style={{ opacity: 0.3 }}>↕</span>;
+      return <span className="competition-sort-indicator">↕</span>;
     }
     return currentSort.direction === 'asc' ? '↑' : '↓';
   };
@@ -33,42 +33,42 @@ const CalligraphyCompetitionTable: React.FC<CalligraphyCompetitionTableProps> = 
 
   return (
     <div className="competition-table-content">
-      <div className="table-responsive">
+      <div className="competition-table-scroll">
         <table className="competition-table">
           <thead>
             <tr>
               <th onClick={() => handleSort('chineseName')}>
-                <div className="sortable-header">
+                <div className="competition-sortable-header">
                   中文名稱 {getSortIcon('chineseName')}
                 </div>
               </th>
               <th onClick={() => handleSort('englishName')}>
-                <div className="sortable-header">
+                <div className="competition-sortable-header">
                   English Name {getSortIcon('englishName')}
                 </div>
               </th>
               <th onClick={() => handleSort('formattedResult')}>
-                <div className="sortable-header">
+                <div className="competition-sortable-header">
                   獎項 {getSortIcon('formattedResult')}
                 </div>
               </th>
               <th onClick={() => handleSort('style')}>
-                <div className="sortable-header">
+                <div className="competition-sortable-header">
                   書體 {getSortIcon('style')}
                 </div>
               </th>
               <th onClick={() => handleSort('formattedDate')}>
-                <div className="sortable-header">
+                <div className="competition-sortable-header">
                   日期 {getSortIcon('formattedDate')}
                 </div>
               </th>
               <th onClick={() => handleSort('year')}>
-                <div className="sortable-header">
+                <div className="competition-sortable-header">
                   年份 {getSortIcon('year')}
                 </div>
               </th>
               <th onClick={() => handleSort('halfYear')}>
-                <div className="sortable-header">
+                <div className="competition-sortable-header">
                   半年 {getSortIcon('halfYear')}
                 </div>
               </th>
@@ -77,12 +77,12 @@ const CalligraphyCompetitionTable: React.FC<CalligraphyCompetitionTableProps> = 
           <tbody>
             {data.length > 0 ? (
               data.map((item) => (
-                <tr key={item.id} className="competition-row">
-                  <td className="chinese-name">{item.chineseName}</td>
-                  <td className="english-name">{item.englishName}</td>
-                  <td className="result-cell">
+                <tr key={item.id}>
+                  <td className="competition-cell--chinese-name">{item.chineseName}</td>
+                  <td className="competition-cell--english-name">{item.englishName}</td>
+                  <td className="competition-cell--result">
                     {Array.isArray(item.result) ? (
-                      <ul className="result-list">
+                      <ul className="competition-result-list">
                         {item.result.map((r, i) => (
                           <li key={i}>{r}</li>
                         ))}
@@ -91,15 +91,15 @@ const CalligraphyCompetitionTable: React.FC<CalligraphyCompetitionTableProps> = 
                       item.result
                     )}
                   </td>
-                  <td className="style-cell">{item.style}</td>
-                  <td className="date-cell">{item.formattedDate}</td>
-                  <td className="year-cell">{item.year}</td>
-                  <td className="half-year-cell">{item.halfYear}</td>
+                  <td className="competition-cell--style">{item.style}</td>
+                  <td className="competition-cell--date">{item.formattedDate}</td>
+                  <td className="competition-cell--year">{item.year}</td>
+                  <td className="half-competition-cell--year">{item.halfYear}</td>
                 </tr>
               ))
             ) : (
               <tr>
-                <td colSpan={7} className="no-data">
+                <td colSpan={7} className="competition-table-empty">
                   沒有符合條件的比賽記錄
                 </td>
               </tr>
@@ -109,7 +109,7 @@ const CalligraphyCompetitionTable: React.FC<CalligraphyCompetitionTableProps> = 
       </div>
       
       {data.length > 0 && (
-        <div className="table-summary">
+        <div className="competition-table-summary">
           顯示 {data.length} 條記錄
           {filters.searchQuery && <span> (搜索: "{filters.searchQuery}")</span>}
           {filters.style && <span> (書體: {filters.style})</span>}

@@ -14,14 +14,14 @@ export default function TabsPage() {
   return (
     <ChallengePage eyebrow="Level 1" title="Tab Navigation" summary="Switch content by selecting different tabs.">
       <div className="challenge-demo tabs-demo">
-        <div className="challenge-tabs">
+        <div className="tabs-list">
           {tabs.map((tab) => (
             <button key={tab.id} type="button" aria-pressed={activeTab === tab.id} onClick={() => setActiveTab(tab.id)}>
               {tab.label}
             </button>
           ))}
         </div>
-        <div className="tab-content">
+        <div className="tabs-content">
           <p>{tabs.find((tab) => tab.id === activeTab)?.body}</p>
         </div>
       </div>

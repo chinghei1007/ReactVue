@@ -1,27 +1,13 @@
-.level3-shell {
-  display: grid;
-  gap: 1.5rem;
-}
-
-.level3-meta {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
-  color: var(--muted-text);
-  font-size: 0.95rem;
-}
-
 .kanban-board {
   display: grid;
   gap: 1rem;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
 
-.level3-column {
-  border: 1px solid rgba(148, 163, 184, 0.35);
+.kanban-column {
+  border: 1px solid var(--color-border);
   border-radius: 20px;
-  background: var(--surface-2);
+  background: var(--color-surface-subtle);
   padding: 1rem;
 }
 
@@ -41,20 +27,20 @@
 
 .kanban-card {
   border-radius: 16px;
-  border: 1px solid rgba(148, 163, 184, 0.35);
-  background: var(--surface);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
   padding: 0.85rem;
   cursor: grab;
 }
 
 .kanban-card.is-dragging,
 .kanban-drop-zone.is-over {
-  outline: 2px solid var(--theme-accent);
+  outline: 2px solid var(--color-accent);
 }
 
 .kanban-drop-zone {
   min-height: 4rem;
-  border: 1px dashed rgba(148, 163, 184, 0.6);
+  border: 1px dashed var(--color-border-strong);
   border-radius: 16px;
-  background: rgba(148, 163, 184, 0.1);
+  background: var(--color-surface-subtle);
 }

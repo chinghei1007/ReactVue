@@ -20,15 +20,15 @@
 
 .visibility-label {
   font-weight: 600;
-  color: var(--text);
+  color: var(--color-content);
 }
 
 .visibility-select {
   padding: 0.75rem 1rem;
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--color-border);
   border-radius: 0.75rem;
-  background: var(--surface);
-  color: var(--text);
+  background: var(--color-surface);
+  color: var(--color-content);
   font-size: 0.95rem;
 }
 
@@ -42,13 +42,11 @@
   color: var(--button-text);
   cursor: pointer;
   transition: all 0.2s ease;
-  box-shadow: none;
 }
 
 .visibility-toggle-btn:hover {
   background: var(--button-info-hover);
   transform: none;
-  box-shadow: none;
 }
 
 .visibility-toggle-btn:active {
@@ -57,10 +55,9 @@
 
 .visibility-content {
   padding: 2rem;
-  background: var(--surface);
-  border: 1px solid var(--border-color);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
   border-radius: 1rem;
-  box-shadow: var(--shadow-lg);
   max-width: 500px;
   width: 100%;
   text-align: center;
@@ -69,17 +66,16 @@
   animation: visibilityFadeIn 0.3s ease forwards;
 }
 
-.visibility-content--collapsed {
+.visibility-content.is-collapsed {
   height: 0;
   padding-top: 0;
   padding-bottom: 0;
   border-width: 0;
   opacity: 0;
   margin: 0;
-  box-shadow: none;
 }
 
-.visibility-content--open {
+.visibility-content.is-open {
   height: auto;
   opacity: 1;
 }
@@ -97,7 +93,7 @@
 
 .visibility-content p {
   margin: 0;
-  color: var(--text);
+  color: var(--color-content);
   font-size: 1.1rem;
   line-height: 1.7;
 }

@@ -52,7 +52,7 @@ export default function Footer() {
           </div>
 
           {/* Link columns
-          <div className="footer-links-group">
+          <div>
             <h4 className="footer-heading">Product</h4>
             <ul className="footer-links">
               {footerLinks.product.map((link) => (
@@ -63,7 +63,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div className="footer-links-group">
+          <div>
             <h4 className="footer-heading">Legal</h4>
             <ul className="footer-links">
               {footerLinks.legal.map((link) => (
@@ -73,7 +73,7 @@ export default function Footer() {
               ))}
             </ul>
           </div> */}
-          <div className="footer-links-group">
+          <div>
             <h4 className="footer-heading">About</h4>
             <ul className="footer-links">
               {footerLinks.company.map((link) => {

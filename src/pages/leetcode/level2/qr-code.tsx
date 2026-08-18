@@ -22,7 +22,7 @@ export default function QrCodePage() {
   }, [text])
 
   return (
-    <ChallengePage eyebrow="Level 2" title="QR Code Generator" summary="Generate QR codes from typed text or URLs.">
+    <ChallengePage className="qr-code-page" eyebrow="Level 2" title="QR Code Generator" summary="Generate QR codes from typed text or URLs.">
       <div className="challenge-demo">
         <textarea value={text} onChange={(event) => setText(event.target.value)} />
         {image ? <img src={image} alt="Generated QR code" /> : null}

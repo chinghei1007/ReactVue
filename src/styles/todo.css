@@ -18,21 +18,20 @@
   flex: 1;
   padding: 0.875rem 1.25rem;
   font-size: 1rem;
-  border: 2px solid var(--border-color);
+  border: 2px solid var(--color-border);
   border-radius: 0.875rem;
-  background: var(--surface);
-  color: var(--text);
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  background: var(--color-surface);
+  color: var(--color-content);
+  transition: border-color var(--transition-fast);
   outline: none;
 }
 
 .todo-input-section input:focus {
-  border-color: #3b82f6;
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+  border-color: var(--color-accent);
 }
 
 .todo-input-section input::placeholder {
-  color: var(--muted-text);
+  color: var(--color-content-muted);
 }
 
 .todo-input-section button {
@@ -45,13 +44,11 @@
   color: var(--button-text);
   cursor: pointer;
   transition: all 0.2s ease;
-  box-shadow: none;
 }
 
 .todo-input-section button:hover {
   background: var(--button-primary-hover);
   transform: none;
-  box-shadow: none;
 }
 
 .todo-input-section button:active {
@@ -72,16 +69,15 @@
   align-items: center;
   justify-content: space-between;
   padding: 1rem 1.25rem;
-  background: var(--surface);
-  border: 1px solid var(--border-color);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
   border-radius: 0.875rem;
   transition: all 0.2s ease;
   gap: 1rem;
 }
 
 .todo-list li:hover {
-  border-color: rgba(59, 130, 246, 0.3);
-  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+  border-color: var(--color-accent);
 }
 
 .todo-list li button:first-of-type {
@@ -93,7 +89,7 @@
   font-size: 1rem;
   background: none;
   border: none;
-  color: var(--text);
+  color: var(--color-content);
   cursor: pointer;
   text-align: left;
   transition: opacity 0.2s ease;
@@ -103,25 +99,25 @@
   opacity: 0.8;
 }
 
-.todo-list li button:first-of-type.done {
-  color: var(--muted-text);
+.todo-list li button:first-of-type.is-done {
+  color: var(--color-content-muted);
   text-decoration: line-through;
 }
 
-.todo-list li button:first-of-type .status-icon {
+.todo-list li button:first-of-type .todo-status-icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  border: 2px solid var(--border-color);
+  border: 2px solid var(--color-border);
   font-size: 0.875rem;
   transition: all 0.2s ease;
   flex-shrink: 0;
 }
 
-.todo-list li button:first-of-type.done .status-icon {
+.todo-list li button:first-of-type.is-done .todo-status-icon {
   background: var(--button-success);
   border-color: var(--button-success);
   color: var(--button-text);
@@ -137,13 +133,11 @@
   color: var(--button-text);
   cursor: pointer;
   transition: all 0.2s ease;
-  box-shadow: none;
 }
 
 .todo-list li button:last-of-type:hover {
   background: var(--button-danger-hover);
   transform: none;
-  box-shadow: none;
 }
 
 .todo-list li button:last-of-type:active {
@@ -153,7 +147,7 @@
 .todo-empty-state {
   text-align: center;
   padding: 3rem 1rem;
-  color: var(--muted-text);
+  color: var(--color-content-muted);
   font-size: 1.1rem;
 }
 

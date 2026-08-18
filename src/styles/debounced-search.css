@@ -1,6 +1,13 @@
-@import './leetcode-level2-common.css';
+.debounced-search-page input {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-input);
+  color: var(--color-content);
+}
 
-.debounced-search-page {
-  display: grid;
-  gap: 1rem;
+.debounced-search-page .challenge-list {
+  max-width: 25rem;
+  margin: 0 auto;
 }

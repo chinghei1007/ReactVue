@@ -1,6 +1,4 @@
-@import './leetcode-level2-common.css';
-
-.pagination-page {
-  display: grid;
-  gap: 1rem;
+.pagination-page .challenge-list {
+  max-width: 25rem;
+  margin: 0 auto;
 }

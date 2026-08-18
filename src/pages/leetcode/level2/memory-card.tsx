@@ -22,8 +22,8 @@ export default function MemoryCardPage() {
   }, [deck, flipped])
 
   return (
-    <ChallengePage eyebrow="Level 2" title="Memory Card Game" summary="Flip cards, match pairs, and track moves.">
-      <div className="challenge-demo memory-card-page">
+    <ChallengePage className="memory-card-page" eyebrow="Level 2" title="Memory Card Game" summary="Flip cards, match pairs, and track moves.">
+      <div className="challenge-demo">
         <div className="challenge-grid">
           {deck.map((card, index) => {
             const isOpen = flipped.includes(index) || matched.includes(index)

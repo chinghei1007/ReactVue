@@ -33,10 +33,10 @@ export default function TodoPage() {
               <li key={todo.id}>
                 <button 
                   type="button" 
-                  className={todo.done ? 'done' : ''}
+                  className={todo.done ? 'is-done' : ''}
                   onClick={() => setTodos((current) => current.map((item) => item.id === todo.id ? { ...item, done: !item.done } : item))}
                 >
-                  <span className="status-icon">{todo.done ? '✓' : '○'}</span>
+                  <span className="todo-status-icon">{todo.done ? '✓' : '○'}</span>
                   <span>{todo.text}</span>
                 </button>
                 <button type="button" onClick={() => setTodos((current) => current.filter((item) => item.id !== todo.id))}>Delete</button>

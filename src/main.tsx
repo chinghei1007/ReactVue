@@ -5,6 +5,7 @@ import { BrowserRouter } from 'react-router-dom'
 import App from '@/App'
 import { ThemeProvider } from '@/theme/ThemeContext'
 import '@/styles/global.css'
+import '@/styles/leetcode-common.css'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>

@@ -1,12 +1,7 @@
-.level4-shell {
-  display: grid;
-  gap: 1.5rem;
-}
-
 .preview-shell {
-  border: 1px solid rgba(148, 163, 184, 0.35);
+  border: 1px solid var(--color-border);
   border-radius: 22px;
-  background: var(--surface-2);
+  background: var(--color-surface-subtle);
   padding: 1rem;
 }
 
@@ -19,18 +14,18 @@
 .preview-grid textarea {
   min-height: 24rem;
   width: 100%;
-  border: 1px solid rgba(148, 163, 184, 0.45);
+  border: 1px solid var(--color-border-strong);
   border-radius: 18px;
   padding: 1rem;
-  background: var(--input-bg);
-  color: var(--text);
+  background: var(--color-input);
+  color: var(--color-content);
 }
 
 .preview-output {
   min-height: 24rem;
   border-radius: 18px;
-  background: var(--surface);
-  color: var(--text);
+  background: var(--color-surface);
+  color: var(--color-content);
   padding: 1rem 1.2rem;
   overflow: auto;
 }
@@ -39,5 +34,5 @@
   overflow: auto;
   padding: 0.75rem;
   border-radius: 14px;
-  background: var(--surface-2);
+  background: var(--color-surface-subtle);
 }

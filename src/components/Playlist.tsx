@@ -1,5 +1,6 @@
 import { useState } from "react";
 import type { PlaylistResponse, PlaylistItem } from "@/ytdlp";
+import "@/components/Playlist.css";
 
 export default function Playlist() {
   const [url, setUrl] = useState("");
@@ -42,7 +43,7 @@ export default function Playlist() {
   }
 
   return (
-    <div className={`playlist ${loading ? "loading" : ""}`}>
+    <div className={`playlist ${loading ? "is-loading" : ""}`}>
       <form onSubmit={handleSubmit} className="playlist-form">
         <input
           type="text"
@@ -56,7 +57,7 @@ export default function Playlist() {
         </button>
       </form>
 
-      <div className="status">
+      <div className="playlist-status">
         {expectedCount !== null && (
           <p>
             Loaded {items.length} of {expectedCount} items
@@ -64,7 +65,7 @@ export default function Playlist() {
         )}
       </div>
 
-      {error && <div className="playlist-item error">{error}</div>}
+      {error && <div className="playlist-item playlist-item--error">{error}</div>}
 
       {items.map((item, i) => (
         <div
@@ -75,7 +76,7 @@ export default function Playlist() {
             animationDelay: `${i * 0.2}s`,
           }}
         >
-          <div className="overlay">
+          <div className="playlist-overlay">
             <h3>{item.title}</h3>
             <p>{item.duration}</p>
           </div>

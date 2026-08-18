@@ -62,13 +62,13 @@ const CalligraphyCompetitionFilters: React.FC<CalligraphyCompetitionFiltersProps
 
   return (
     <div className="competition-filters">
-      <div className="filters-header" onClick={() => setIsExpanded(!isExpanded)}>
+      <div className="competition-filters-header" onClick={() => setIsExpanded(!isExpanded)}>
         <span>篩選器</span>
         {activeFiltersCount > 0 && (
-          <span className="active-filters-badge">{activeFiltersCount}</span>
+          <span className="competition-filters-badge">{activeFiltersCount}</span>
         )}
         <button 
-          className="expand-toggle"
+          className="competition-filters-toggle"
           onClick={(e) => {
             e.stopPropagation();
             setIsExpanded(!isExpanded);
@@ -79,14 +79,14 @@ const CalligraphyCompetitionFilters: React.FC<CalligraphyCompetitionFiltersProps
       </div>
 
       {isExpanded && (
-        <div className="filters-content">
-          <div className="filter-group">
+        <div className="competition-filters-content">
+          <div className="competition-filter-group">
             <label htmlFor="view-mode">顯示模式:</label>
             <select
               id="view-mode"
               value={viewMode}
               onChange={(e) => onViewModeChange(e.target.value as 'table' | 'chart' | 'both')}
-              className="filter-select"
+              className="competition-filter-select"
             >
               <option value="both">表格 + 圖表</option>
               <option value="table">僅表格</option>
@@ -94,7 +94,7 @@ const CalligraphyCompetitionFilters: React.FC<CalligraphyCompetitionFiltersProps
             </select>
           </div>
 
-          <div className="filter-group">
+          <div className="competition-filter-group">
             <label htmlFor="search">搜索:</label>
             <input
               type="text"
@@ -102,17 +102,17 @@ const CalligraphyCompetitionFilters: React.FC<CalligraphyCompetitionFiltersProps
               value={filters.searchQuery || ''}
               onChange={handleSearchChange}
               placeholder="比賽名稱、獎項..."
-              className="filter-input"
+              className="competition-filter-input"
             />
           </div>
 
-          <div className="filter-group">
+          <div className="competition-filter-group">
             <label htmlFor="style">書體:</label>
             <select
               id="style"
               value={filters.style || ''}
               onChange={handleStyleChange}
-              className="filter-select"
+              className="competition-filter-select"
             >
               <option value="">所有書體</option>
               {availableStyles.map((style) => (
@@ -121,13 +121,13 @@ const CalligraphyCompetitionFilters: React.FC<CalligraphyCompetitionFiltersProps
             </select>
           </div>
 
-          <div className="filter-group">
+          <div className="competition-filter-group">
             <label htmlFor="year">年份:</label>
             <select
               id="year"
               value={filters.year || ''}
               onChange={handleYearChange}
-              className="filter-select"
+              className="competition-filter-select"
             >
               <option value="">所有年份</option>
               {availableYears.sort((a, b) => b - a).map((year) => (
@@ -136,13 +136,13 @@ const CalligraphyCompetitionFilters: React.FC<CalligraphyCompetitionFiltersProps
             </select>
           </div>
 
-          <div className="filter-group">
+          <div className="competition-filter-group">
             <label htmlFor="halfYear">半年:</label>
             <select
               id="halfYear"
               value={filters.halfYear || ''}
               onChange={handleHalfYearChange}
-              className="filter-select"
+              className="competition-filter-select"
             >
               <option value="">所有半年</option>
               {availableHalfYears.map((halfYear) => (
@@ -151,9 +151,9 @@ const CalligraphyCompetitionFilters: React.FC<CalligraphyCompetitionFiltersProps
             </select>
           </div>
 
-          <div className="filter-actions">
+          <div className="competition-filter-actions">
             <button 
-              className="clear-filters-btn"
+              className="competition-clear-filters-button"
               onClick={clearFilters}
               disabled={activeFiltersCount === 0}
             >

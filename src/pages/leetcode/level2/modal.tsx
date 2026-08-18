@@ -18,8 +18,8 @@ export default function ModalPage() {
       <div className="challenge-demo">
         <button type="button" onClick={() => setOpen(true)}>Open modal</button>
         {open ? (
-          <div className="challenge-modal-backdrop" onClick={() => setOpen(false)} role="presentation">
-            <div className="challenge-modal" onClick={(event) => event.stopPropagation()} role="dialog" aria-modal="true">
+          <div className="modal-backdrop" onClick={() => setOpen(false)} role="presentation">
+            <div className="modal-dialog" onClick={(event) => event.stopPropagation()} role="dialog" aria-modal="true">
               <button type="button" onClick={() => setOpen(false)}>Close</button>
               <p className="challenge-copy">This is a modal dialog.</p>
             </div>

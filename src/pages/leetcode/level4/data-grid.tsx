@@ -26,7 +26,7 @@ const GridRow = memo(function GridRow({
       {row.cells.map((value, columnIndex) => (
         <td key={`${row.id}-${columnIndex}`} style={{ width: widths[columnIndex] }}>
           <input
-            className="grid-cell"
+            className="data-grid-cell"
             value={value}
             onChange={(event) => onCellChange(row.id, columnIndex, event.target.value)}
           />
@@ -89,20 +89,20 @@ export default function DataGridPage() {
       title="Data Grid / Spreadsheet"
       summary="Editable 100 x 20 grid with sortable columns and pointer-based resize handles."
     >
-      <div className="level4-shell">
-        <div className="grid-toolbar">
+      <div className="level-4-shell">
+        <div className="data-grid-toolbar">
           <span>Rows: {rowCount}</span>
           <span>Columns: {columnCount}</span>
           <span>Sorted by: {sortConfig ? `${columnIds[sortConfig.column]} (${sortConfig.direction})` : 'none'}</span>
         </div>
-        <div className="grid-shell">
-          <table className="grid-table">
+        <div className="data-grid-shell">
+          <table className="data-grid-table">
             <thead>
               <tr>
                 {columnIds.map((column, index) => (
                   <th key={column} style={{ width: widths[index] }}>
                     <div
-                      className="grid-header"
+                      className="data-grid-header"
                       onClick={() =>
                         setSortConfig((current) =>
                           current?.column === index
@@ -112,7 +112,7 @@ export default function DataGridPage() {
                       }
                     >
                       {column}
-                      <span className="grid-resizer" onPointerDown={(event) => {
+                      <span className="data-grid-resizer" onPointerDown={(event) => {
                         event.stopPropagation()
                         resizeState.current = { index, startX: event.clientX, startWidth: widths[index] }
                       }} />

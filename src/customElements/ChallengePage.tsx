@@ -11,9 +11,9 @@ type ChallengePageProps = {
 
 export default function ChallengePage({ title, eyebrow, summary, content, className, children }: ChallengePageProps) {
   return (
-    <article className={`flex flex-col gap-4 rounded-3xl border border-line bg-surface p-6 text-content shadow-panel ${className ?? ''}`.trim()}>
+    <article className={`panel challenge-page ${className ?? ''}`.trim()}>
       <SectionHeading eyebrow={eyebrow} title={title} description={summary} />
-      <div className="text-content-muted">
+      <div className="challenge-body">
         {content ? <p>{content}</p> : null}
         {children}
       </div>

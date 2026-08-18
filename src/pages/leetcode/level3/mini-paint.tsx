@@ -48,8 +48,8 @@ export default function MiniPaintPage() {
       title="Interactive Canvas Drawing Tool"
       summary="Draw on a canvas, switch between brush and eraser, change stroke size, and clear the board."
     >
-      <div className="level3-shell">
-        <div className="level3-paint-panel">
+      <div className="level-3-shell">
+        <div className="paint-panel">
           <div className="paint-toolbar">
             <label className="paint-control">
               <span>Tool</span>

@@ -1,6 +1,4 @@
-@import './leetcode-level2-common.css';
-
-.stopwatch-page {
-  display: grid;
-  gap: 1rem;
+.stopwatch-page .challenge-list {
+  max-width: 25rem;
+  margin: 0 auto;
 }

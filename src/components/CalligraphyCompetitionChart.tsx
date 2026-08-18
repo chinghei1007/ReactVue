@@ -53,10 +53,10 @@ const CalligraphyCompetitionChart: React.FC<CalligraphyCompetitionChartProps> = 
         // Defensively release any instance created by an older async effect.
         ChartJS.getChart(ctx)?.destroy();
 
-        const textColor = getComputedStyle(document.documentElement).getPropertyValue('--text').trim() || '#e2e8f0';
-        const mutedTextColor = getComputedStyle(document.documentElement).getPropertyValue('--muted-text').trim() || '#c4cfdf';
-        const borderColor = getComputedStyle(document.documentElement).getPropertyValue('--border-color').trim() || 'rgba(148, 163, 184, 0.25)';
-        const bgColor = getComputedStyle(document.documentElement).getPropertyValue('--bg').trim() || '#020617';
+        const textColor = getComputedStyle(document.documentElement).getPropertyValue('--color-content').trim() || '#e2e8f0';
+        const mutedTextColor = getComputedStyle(document.documentElement).getPropertyValue('--color-content-muted').trim() || '#c4cfdf';
+        const borderColor = getComputedStyle(document.documentElement).getPropertyValue('--color-border').trim() || '#334155';
+        const bgColor = getComputedStyle(document.documentElement).getPropertyValue('--color-page').trim() || '#020617';
 
         const initialChartData = latestChartDataRef.current;
         const chart = new ChartJS(ctx, {
@@ -181,10 +181,10 @@ const CalligraphyCompetitionChart: React.FC<CalligraphyCompetitionChartProps> = 
       const chart = chartRef.current;
       
       // Update colors based on current theme
-      const textColor = getComputedStyle(document.documentElement).getPropertyValue('--text').trim() || '#e2e8f0';
-      const mutedTextColor = getComputedStyle(document.documentElement).getPropertyValue('--muted-text').trim() || '#c4cfdf';
-      const borderColor = getComputedStyle(document.documentElement).getPropertyValue('--border-color').trim() || 'rgba(148, 163, 184, 0.25)';
-      const bgColor = getComputedStyle(document.documentElement).getPropertyValue('--bg').trim() || '#020617';
+      const textColor = getComputedStyle(document.documentElement).getPropertyValue('--color-content').trim() || '#e2e8f0';
+      const mutedTextColor = getComputedStyle(document.documentElement).getPropertyValue('--color-content-muted').trim() || '#c4cfdf';
+      const borderColor = getComputedStyle(document.documentElement).getPropertyValue('--color-border').trim() || '#334155';
+      const bgColor = getComputedStyle(document.documentElement).getPropertyValue('--color-page').trim() || '#020617';
 
       const legendLabels = chart.options.plugins?.legend?.labels;
       const chartTitle = chart.options.plugins?.title;
@@ -212,7 +212,7 @@ const CalligraphyCompetitionChart: React.FC<CalligraphyCompetitionChartProps> = 
   if (error) {
     return (
       <div className="competition-chart-container">
-        <div className="chart-error">
+        <div className="competition-chart-error">
           <p>⚠️ {error}</p>
           <p>圖表功能需要 Chart.js 庫，請確保網路連接正常。</p>
         </div>
@@ -222,7 +222,7 @@ const CalligraphyCompetitionChart: React.FC<CalligraphyCompetitionChartProps> = 
 
   return (
     <div className="competition-chart-container">
-      <div className="chart-type-radio-group" role="radiogroup" aria-label="圖表類型">
+      <div className="competition-chart-type-options" role="radiogroup" aria-label="圖表類型">
         <label>
           <input
             type="radio"
@@ -244,10 +244,10 @@ const CalligraphyCompetitionChart: React.FC<CalligraphyCompetitionChartProps> = 
           按半年
         </label>
       </div>
-      <div className="chart-wrapper">
+      <div className="competition-chart-wrapper">
         <canvas ref={canvasRef} />
       </div>
-      <div className="chart-info">
+      <div className="competition-chart-info">
         <span>比賽數量趨勢圖 ({type === 'year' ? '按年份' : '按半年'})</span>
       </div>
     </div>

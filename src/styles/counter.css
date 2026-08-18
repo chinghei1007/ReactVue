@@ -1,151 +1,45 @@
-/* Counter Styles - Enhanced with light/dark mode support */
-
 .counter-demo {
-  display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 1.5rem;
-  padding: 2rem;
+  padding: var(--space-8);
 }
 
-.counter-panel {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5rem;
-  padding: 2.5rem;
-  background: var(--surface);
-  border-radius: 1.5rem;
-  border: 1px solid var(--border-color);
-  box-shadow: var(--shadow-lg);
-  max-width: 400px;
-  width: 100%;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.counter-panel:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 24px 40px rgba(15, 23, 42, 0.15);
-}
-
-.challenge-metric {
+.counter-metric {
   font-size: 4rem;
-  font-weight: 700;
-  color: var(--text);
-  margin: 0;
-  text-align: center;
-  letter-spacing: -0.02em;
-  background: linear-gradient(135deg, var(--text) 0%, var(--muted-text) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
 }
 
-.challenge-field {
-  display: flex;
-  flex-direction: column;
+.counter-field {
+  width: auto;
   align-items: center;
-  gap: 0.5rem;
-  font-size: 0.95rem;
-  color: var(--muted-text);
-  font-weight: 500;
+  color: var(--color-content-muted);
 }
 
-.challenge-field input {
-  width: 80px;
-  padding: 0.65rem 1rem;
-  font-size: 1.1rem;
-  font-weight: 600;
+.counter-field input {
+  width: 5rem;
   text-align: center;
-  border: 2px solid var(--border-color);
-  border-radius: 0.75rem;
-  background: var(--bg);
-  color: var(--text);
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
-  outline: none;
 }
 
-.challenge-field input:focus {
-  border-color: #3b82f6;
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
-}
-
-.challenge-actions {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.75rem;
-  width: 100%;
-}
-
-.challenge-actions button {
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  font-weight: 600;
-  border: none;
-  border-radius: 0.75rem;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.challenge-actions button:first-of-type {
-  background: var(--button-primary);
-  color: var(--button-text);
-  box-shadow: none;
-}
-
-.challenge-actions button:first-of-type:hover {
-  background: var(--button-primary-hover);
-  transform: none;
-  box-shadow: none;
-}
-
-.challenge-actions button:nth-of-type(2) {
+.counter-actions button:nth-of-type(2) {
   background: var(--button-secondary);
-  color: var(--button-text);
-  box-shadow: none;
 }
 
-.challenge-actions button:nth-of-type(2):hover {
+.counter-actions button:nth-of-type(2):hover {
   background: var(--button-secondary-hover);
-  transform: none;
-  box-shadow: none;
 }
 
-.challenge-actions button:last-of-type {
+.counter-actions button:last-of-type {
   background: var(--button-success);
-  color: var(--button-text);
-  box-shadow: none;
 }
 
-.challenge-actions button:last-of-type:hover {
+.counter-actions button:last-of-type:hover {
   background: var(--button-success-hover);
-  transform: none;
-  box-shadow: none;
-}
-
-.challenge-actions button:active {
-  transform: translateY(0);
 }
 
 @media (max-width: 640px) {
-  .challenge-metric {
+  .counter-demo {
+    padding: var(--space-4);
+  }
+
+  .counter-metric {
     font-size: 3rem;
-  }
-  
-  .counter-panel {
-    padding: 1.5rem;
-  }
-  
-  .challenge-actions {
-    flex-direction: column;
-    align-items: stretch;
-  }
-  
-  .challenge-actions button {
-    justify-content: center;
   }
 }

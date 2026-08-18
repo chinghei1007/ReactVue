@@ -5,51 +5,46 @@
 }
 
 .tooltip-label {
+  color: var(--color-accent);
   font-weight: 500;
-  color: #007bff;
 }
 
 .tooltip-box {
   position: absolute;
-  background: #333;
-  color: #fff;
-  padding: 0.5rem 0.75rem;
-  border-radius: 0.25rem;
+  z-index: 10;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-sm);
+  background: var(--color-content);
+  color: var(--color-page);
+  box-shadow: var(--shadow-floating);
   font-size: 0.85rem;
   white-space: nowrap;
-  transition: opacity 0.2s ease;
-  opacity: 0.9;
-  z-index: 10;
 }
 
-/* Default bottom */
 .tooltip-bottom {
   top: 100%;
   left: 50%;
+  margin-top: var(--space-2);
   transform: translateX(-50%);
-  margin-top: 0.5rem;
 }
 
-/* Top */
 .tooltip-top {
   bottom: 100%;
   left: 50%;
+  margin-bottom: var(--space-2);
   transform: translateX(-50%);
-  margin-bottom: 0.5rem;
 }
 
-/* Left */
 .tooltip-left {
-  right: 100%;
   top: 50%;
+  right: 100%;
+  margin-right: var(--space-2);
   transform: translateY(-50%);
-  margin-right: 0.5rem;
 }
 
-/* Right */
 .tooltip-right {
-  left: 100%;
   top: 50%;
+  left: 100%;
+  margin-left: var(--space-2);
   transform: translateY(-50%);
-  margin-left: 0.5rem;
 }

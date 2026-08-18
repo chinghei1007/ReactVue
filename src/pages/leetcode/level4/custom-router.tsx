@@ -45,7 +45,7 @@ export default function CustomRouterPage() {
       title="Build A Custom Router"
       summary="A tiny router built from `pushState`, `popstate`, and dynamic route matching without using React Router inside the demo."
     >
-      <div className="level4-shell">
+      <div className="level-4-shell">
         <div className="router-shell">
           <div className="router-nav">
             <button type="button" onClick={() => navigate('/')}>Home</button>
@@ -54,7 +54,7 @@ export default function CustomRouterPage() {
             <button type="button" onClick={() => navigate('/user/108')}>User 108</button>
           </div>
           <div className="router-view">
-            <span className="route-badge">Current path: {path}</span>
+            <span className="router-badge">Current path: {path}</span>
             {route.name === 'home' ? <p>Home route rendered from a custom matcher.</p> : null}
             {route.name === 'metrics' ? <p>Metrics route rendered from a second static entry.</p> : null}
             {route.name === 'user' ? <p>Dynamic route matched user id: {route.params.id}</p> : null}

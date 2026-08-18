@@ -1,18 +1,10 @@
 /* src/components/Footer.css */
 .footer {
-  background: var(--surface);
-  color: var(--muted-text);
+  background: var(--color-surface-subtle);
+  color: var(--color-content-muted);
   padding: 3rem 1.5rem 1.5rem;
   margin-top: auto;
-  border-top: 1px solid var(--border-color);
-}
-
-:root[data-theme='light'] .footer {
-  background: #f1f5f9;
-}
-
-:root[data-theme='dark'] .footer {
-  background: #0f172a;
+  border-top: 1px solid var(--color-border);
 }
 
 .footer-inner {
@@ -29,24 +21,16 @@
 
 /* Brand column */
 .footer-logo {
-  color: var(--text);
+  color: var(--color-accent);
   font-size: 1.25rem;
   font-weight: 700;
   text-decoration: none;
 }
 
-:root[data-theme='light'] .footer-logo {
-  color: #1e40af;
-}
-
-:root[data-theme='dark'] .footer-logo {
-  color: #60a5fa;
-}
-
 .footer-tagline {
   margin: 0.5rem 0 1.25rem;
   font-size: 0.9rem;
-  color: var(--muted-text);
+  color: var(--color-content-muted);
 }
 
 .footer-social {
@@ -55,40 +39,24 @@
 }
 
 .footer-social a {
-  color: var(--muted-text);
+  color: var(--color-content-muted);
   transition: color 0.2s;
   display: flex;
   align-items: center;
 }
 
 .footer-social a:hover {
-  color: var(--text);
-}
-
-:root[data-theme='light'] .footer-social a:hover {
-  color: #2563eb;
-}
-
-:root[data-theme='dark'] .footer-social a:hover {
-  color: #60a5fa;
+  color: var(--color-accent);
 }
 
 /* Link columns */
 .footer-heading {
-  color: var(--text);
+  color: var(--color-accent);
   font-size: 0.85rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   margin: 0 0 0.75rem;
-}
-
-:root[data-theme='light'] .footer-heading {
-  color: #1e40af;
-}
-
-:root[data-theme='dark'] .footer-heading {
-  color: #60a5fa;
 }
 
 .footer-links {
@@ -101,37 +69,29 @@
   margin-bottom: 0.4rem;
 }
 
-.footer-links li 
-,.footer-links a {
-  color: var(--muted-text);
+.footer-links li,
+.footer-links a {
+  color: var(--color-content-muted);
   text-decoration: none;
   font-size: 0.9rem;
   transition: color 0.2s;
 }
 
 .footer-links a:hover {
-  color: var(--text);
-}
-
-:root[data-theme='light'] .footer-links a:hover {
-  color: #2563eb;
-}
-
-:root[data-theme='dark'] .footer-links a:hover {
-  color: #60a5fa;
+  color: var(--color-accent);
 }
 
 /* Bottom bar */
 .footer-bottom {
   margin-top: 2.5rem;
   padding-top: 1.25rem;
-  border-top: 1px solid var(--border-color);
+  border-top: 1px solid var(--color-border);
 }
 
 .footer-bottom p {
   margin: 0;
   font-size: 0.8rem;
-  color: var(--muted-text);
+  color: var(--color-content-muted);
 }
 
 /* Responsive */

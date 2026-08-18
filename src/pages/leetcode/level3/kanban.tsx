@@ -53,16 +53,16 @@ export default function KanbanPage() {
       title="Drag And Drop Kanban"
       summary="Drag cards between columns or reorder them in place using the native HTML5 drag and drop API."
     >
-      <div className="level3-shell">
-        <div className="level3-meta">
+      <div className="level-3-shell">
+        <div className="level-3-meta">
           <span>{totalCards} cards across 3 columns</span>
-          <button type="button" className="level3-button" onClick={() => setBoard(initialBoard)}>Reset board</button>
+          <button type="button" className="level-3-button" onClick={() => setBoard(initialBoard)}>Reset board</button>
         </div>
         <div className="kanban-board">
           {columns.map((column) => (
             <section
               key={column.id}
-              className="level3-column"
+              className="kanban-column"
               onDragOver={(event) => event.preventDefault()}
               onDrop={() => {
                 if (!dragState) return

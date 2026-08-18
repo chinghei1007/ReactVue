@@ -42,8 +42,8 @@ function ToastListener() {
   return (
     <div className="toast-stack">
       {toasts.map((toast) => (
-        <article key={toast.id} className={`toast ${toast.kind}`}>
-          <div className="toast-head">
+        <article key={toast.id} className={`toast toast--${toast.kind}`}>
+          <div className="toast-header">
             <span className="toast-kind">{toast.kind}</span>
             <button type="button" onClick={() => setToasts((current) => current.filter((item) => item.id !== toast.id))}>
               Close

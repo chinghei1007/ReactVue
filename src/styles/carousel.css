@@ -1,6 +1,21 @@
-@import './leetcode-level2-common.css';
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-2);
+}
 
-.carousel-page {
-  display: grid;
-  gap: 1rem;
+.carousel-dots button {
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  background: var(--color-surface-raised);
+  color: var(--color-content-muted);
+}
+
+.carousel-dots button[aria-pressed='true'] {
+  border-color: var(--color-accent);
+  background: var(--color-accent);
+  color: var(--color-on-accent);
 }

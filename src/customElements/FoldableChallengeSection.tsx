@@ -60,15 +60,15 @@ export default function FoldableChallengeSection({ sections }: FoldableChallenge
   if (sections.length === 0) return null
 
   return (
-    <section className="foldable-challenge-section">
-      <div className="levels-header">
-        <span className="levels-label">Leetcode Levels</span>
-        <div className="level-tabs">
+    <section className="panel foldable-challenge">
+      <div className="foldable-challenge-header">
+        <span className="foldable-challenge-label">Leetcode Levels</span>
+        <div className="foldable-challenge-tabs">
           {sections.map((section, index) => (
             <button
               key={section.eyebrow}
               type="button"
-              className={`level-tab ${activeLevel === index ? 'is-active' : ''}`}
+              className={`foldable-challenge-tab ${activeLevel === index ? 'is-active' : ''}`}
               onClick={() => handleLevelClick(index)}
             >
               {index + 1}
@@ -78,10 +78,10 @@ export default function FoldableChallengeSection({ sections }: FoldableChallenge
       </div>
 
       <div
-        className={`cards-container-wrapper ${isExpanded && activeLevel !== null ? 'is-expanded' : ''}`}
+        className={`foldable-challenge-cards-wrapper ${isExpanded && activeLevel !== null ? 'is-expanded' : ''}`}
       >
         {activeLevel !== null && (
-          <div className="cards-container" ref={cardsContainerRef}>
+          <div className="foldable-challenge-cards" ref={cardsContainerRef}>
             <div className="card-grid">
               {sections[activeLevel].items.map((item) => (
                 <ChallengeCard key={item.to} {...item} />
@@ -91,10 +91,10 @@ export default function FoldableChallengeSection({ sections }: FoldableChallenge
         )}
 
         {showScrollButtons && isExpanded && (
-          <div className="scroll-buttons">
+          <div className="foldable-challenge-scroll-controls">
             <button
               type="button"
-              className={`scroll-btn scroll-up ${!canScrollUp ? 'is-disabled' : ''}`}
+              className={`foldable-challenge-scroll-button ${!canScrollUp ? 'is-disabled' : ''}`}
               onClick={() => scrollCards('up')}
               disabled={!canScrollUp}
               aria-label="Scroll up"
@@ -105,7 +105,7 @@ export default function FoldableChallengeSection({ sections }: FoldableChallenge
             </button>
             <button
               type="button"
-              className={`scroll-btn scroll-down ${!canScrollDown ? 'is-disabled' : ''}`}
+              className={`foldable-challenge-scroll-button ${!canScrollDown ? 'is-disabled' : ''}`}
               onClick={() => scrollCards('down')}
               disabled={!canScrollDown}
               aria-label="Scroll down"
@@ -119,10 +119,10 @@ export default function FoldableChallengeSection({ sections }: FoldableChallenge
       </div>
 
       {activeLevel !== null && isExpanded && (
-        <div className="level-info">
-          <h3 className="level-title">{sections[activeLevel].title}</h3>
+        <div className="foldable-challenge-level-info">
+          <h3 className="foldable-challenge-level-title">{sections[activeLevel].title}</h3>
           {sections[activeLevel].description && (
-            <p className="level-description">{sections[activeLevel].description}</p>
+            <p className="foldable-challenge-level-description">{sections[activeLevel].description}</p>
           )}
         </div>
       )}

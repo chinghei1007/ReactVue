@@ -24,13 +24,13 @@ export default function ContextMenuPage() {
       title="Custom Context Menu"
       summary="Intercept the browser context menu, place a custom menu at the pointer, and close it when the user clicks away."
     >
-      <div className="level3-shell">
+      <div className="level-3-shell">
         <div className="context-menu-header">
           <strong>{message}</strong>
         </div>
         <div
           ref={surfaceRef}
-          className="level3-context-surface"
+          className="context-menu-surface"
           onContextMenu={(event) => {
             event.preventDefault()
             const bounds = surfaceRef.current?.getBoundingClientRect()

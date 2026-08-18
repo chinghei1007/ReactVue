@@ -170,8 +170,8 @@ const CalligraphyCompetitionPage: React.FC = () => {
         {
           label: chartType === 'year' ? '比賽數量 (按年份)' : '比賽數量 (按半年)',
           data,
-          borderColor: 'var(--text)',
-          backgroundColor: 'var(--text)',
+          borderColor: 'var(--color-content)',
+          backgroundColor: 'var(--color-content)',
           fill: false
         }
       ]
@@ -204,10 +204,10 @@ const CalligraphyCompetitionPage: React.FC = () => {
   }, []);
 
   return (
-    <div className="calligraphy-competition-page">
-      <header className="page-header">
+    <div className="competition-page">
+      <header className="competition-page-header">
         <h1>書法比賽記錄</h1>
-        <p className="page-subtitle">個人參加的書法比賽及獲獎記錄</p>
+        <p className="competition-page-subtitle">個人參加的書法比賽及獲獎記錄</p>
       </header>
 
       <div className="competition-table-container">
@@ -242,7 +242,7 @@ const CalligraphyCompetitionPage: React.FC = () => {
         </section>
       )}
 
-      <div className="page-footer">
+      <div className="competition-page-footer">
         <p>總計: {preparedData.length} 場比賽 | 顯示: {filteredData.length} 條記錄</p>
       </div>
     </div>

@@ -1,8 +1,3 @@
-.level3-shell {
-  display: grid;
-  gap: 1.5rem;
-}
-
 .wizard-shell {
   display: grid;
   gap: 1rem;
@@ -18,13 +13,13 @@
 .wizard-bar {
   height: 0.75rem;
   border-radius: 999px;
-  background: rgba(148, 163, 184, 0.2);
+  background: var(--color-surface-subtle);
   overflow: hidden;
 }
 
 .wizard-bar-fill {
   height: 100%;
-  background: var(--theme-accent);
+  background: var(--color-accent);
   transition: width 0.2s ease;
 }
 
@@ -33,27 +28,20 @@
   gap: 0.9rem;
 }
 
-.level3-panel {
-  border: 1px solid rgba(148, 163, 184, 0.35);
-  border-radius: 20px;
-  background: var(--surface-2);
-  padding: 1rem;
-}
-
 .wizard-field span {
   display: block;
   margin-bottom: 0.35rem;
-  color: var(--muted-text);
+  color: var(--color-content-muted);
   font-size: 0.92rem;
 }
 
 .wizard-fields input {
   width: 100%;
-  border: 1px solid rgba(148, 163, 184, 0.55);
+  border: 1px solid var(--color-border-strong);
   border-radius: 14px;
   padding: 0.8rem 0.95rem;
-  background: var(--input-bg);
-  color: var(--text);
+  background: var(--color-input);
+  color: var(--color-content);
 }
 
 .wizard-actions {
@@ -65,12 +53,4 @@
 .wizard-error {
   color: #b91c1c;
   font-size: 0.92rem;
-}
-
-.level3-shell button {
-  border: 1px solid rgba(148, 163, 184, 0.45);
-  border-radius: 14px;
-  padding: 0.7rem 0.95rem;
-  background: var(--input-bg);
-  color: var(--text);
 }

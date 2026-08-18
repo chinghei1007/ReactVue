@@ -46,23 +46,23 @@ export default function InfiniteScrollPage() {
       title="Infinite Scroll"
       summary="Render 1,000 mocked rows and reveal 20 more each time the sentinel reaches the viewport."
     >
-      <div className="level3-shell">
-        <div className="level3-meta">
+      <div className="level-3-shell">
+        <div className="level-3-meta">
           <span>{visibleItems.length} / {allItems.length} rows loaded</span>
-          <button type="button" className="level3-button" onClick={() => setVisibleCount(batchSize)}>Reset</button>
+          <button type="button" className="level-3-button" onClick={() => setVisibleCount(batchSize)}>Reset</button>
         </div>
-        <div className="level3-scroller">
-          <div className="level3-list">
+        <div className="level-3-scroller">
+          <div className="level-3-list">
             {visibleItems.map((item) => (
-              <article key={item.id} className="level3-list-item">
+              <article key={item.id} className="level-3-list-item">
                 <strong>{item.title}</strong>
                 <p>{item.summary}</p>
               </article>
             ))}
             <div ref={sentinelRef} />
             {isLoading ? (
-              <div className="level3-loading">
-                <span className="level3-spinner" />
+              <div className="level-3-loading">
+                <span className="level-3-spinner" />
                 <span>Loading next batch...</span>
               </div>
             ) : null}

@@ -12,14 +12,12 @@
     "deploy": "npm run build && wrangler deploy"
   },
   "dependencies": {
-    "@tailwindcss/vite": "^4.3.3",
     "chart.js": "^4.5.1",
     "child_process": "^1.0.2",
     "marked": "^18.0.5",
     "qrcode": "^1.5.4",
     "react": "^19.2.6",
-    "react-dom": "^19.2.6",
-    "tailwindcss": "^4.3.3"
+    "react-dom": "^19.2.6"
   },
   "devDependencies": {
     "@cloudflare/vite-plugin": "^1.43.0",

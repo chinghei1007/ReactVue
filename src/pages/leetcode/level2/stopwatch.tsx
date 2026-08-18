@@ -26,7 +26,7 @@ export default function StopwatchPage() {
   }
 
   return (
-    <ChallengePage eyebrow="Level 2" title="Stopwatch with Laps" summary="Start, stop, reset, and record lap times.">
+    <ChallengePage className="stopwatch-page" eyebrow="Level 2" title="Stopwatch with Laps" summary="Start, stop, reset, and record lap times.">
       <div className="challenge-demo">
         <p className="challenge-metric">{(elapsed / 1000).toFixed(1)}s</p>
         <div className="challenge-actions">

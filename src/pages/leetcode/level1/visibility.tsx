@@ -41,7 +41,7 @@ export default function VisibilityPage() {
             </div>
           )
         ) : (
-          <div className={`visibility-content ${visible ? 'visibility-content--open' : 'visibility-content--collapsed'}`}>
+          <div className={`visibility-content ${visible ? 'is-open' : 'is-collapsed'}`}>
             <p>This content collapses to zero height.</p>
           </div>
         )}

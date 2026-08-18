@@ -23,7 +23,7 @@ export default function TrafficLightPage() {
           {lights.map((light) => (
             <span 
               key={light} 
-              className={`traffic-light ${light}`}
+              className={`traffic-light traffic-light--${light}`}
               data-active={active === light ? 'true' : 'false'}
             />
           ))}

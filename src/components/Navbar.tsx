@@ -92,7 +92,7 @@ const navItems: TopNavItem[] = [
 // --- Render helpers ---
 function renderSecondLevel(items: { label: string; to: string }[]) {
   return (
-    <ul className="dropdown-sub">
+    <ul className="navbar-submenu">
       {items.map((sub) => (
         <li key={sub.label}>
           <Link to={sub.to}>{sub.label}</Link>
@@ -108,20 +108,20 @@ function renderFirstLevel(
   setOpenSubPanel: React.Dispatch<React.SetStateAction<string | null>>,
 ) {
   return (
-    <ul className="dropdown">
+    <ul className="navbar-dropdown">
       {items.map((child) => (
-        <li key={child.label} className="dropdown-item">
+        <li key={child.label} className="navbar-dropdown-item">
           {'children' in child ? (
             <>
               <button
                 type="button"
-                className="dropdown-label has-sub"
+                className="navbar-dropdown-label navbar-has-submenu"
                 aria-expanded={openSubPanel === child.label}
                 onClick={() => setOpenSubPanel((value) => (value === child.label ? null : child.label))}
               >
                 {child.label}
               </button>
-              <div className={`dropdown-sub-panel ${openSubPanel === child.label ? 'is-open' : ''}`}>
+              <div className={`navbar-subpanel ${openSubPanel === child.label ? 'is-open' : ''}`}>
                 {renderSecondLevel(child.children)}
               </div>
             </>
@@ -173,12 +173,12 @@ export default function Navbar() {
         </button>
         <ul id="navbar-menu" className={`navbar-nav ${mobileOpen ? 'is-open' : ''}`}>
           {navItems.map((item) => (
-            <li key={item.label} className="nav-item">
+            <li key={item.label} className="navbar-item">
               {'children' in item ? (
                 <>
                   <button
                     type="button"
-                    className="nav-link has-dropdown"
+                    className="navbar-link navbar-has-dropdown"
                     aria-expanded={openPanel === item.label}
                     onClick={() => {
                       setOpenPanel((value) => (value === item.label ? null : item.label))
@@ -187,14 +187,14 @@ export default function Navbar() {
                   >
                     {item.label}
                   </button>
-                  <div className={`nav-panel ${openPanel === item.label ? 'is-open' : ''}`}>
+                  <div className={`navbar-panel ${openPanel === item.label ? 'is-open' : ''}`}>
                     {renderFirstLevel(item.children, openSubPanel, setOpenSubPanel)}
                   </div>
                 </>
               ) : (
                 <Link
                   to={item.to}
-                  className="nav-link"
+                  className="navbar-link"
                   onClick={() => {
                     setMobileOpen(false)
                     setOpenPanel(null)

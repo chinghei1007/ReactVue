@@ -41,20 +41,20 @@ export default function TicTacToePage() {
 
   return (
     <ChallengePage eyebrow="Level 2" title="Tic-Tac-Toe" summary="Play a full game. A red line highlights the winning combination.">
-      <div className="challenge-demo tic-tac-toe-page">
-        <div className="challenge-grid">
+      <div className="challenge-demo">
+        <div className="challenge-grid tic-tac-toe-grid">
           {board.map((cell, index) => (
             <button 
               key={index} 
               type="button" 
               onClick={() => play(index)}
-              className={line.includes(index) && winner ? 'winning-cell' : ''}
+              className={line.includes(index) && winner ? 'is-winning' : ''}
             >
               {cell}
             </button>
           ))}
           {winner && (
-            <div className="winning-line" data-line={JSON.stringify(line)}></div>
+            <div className="tic-tac-toe-winning-line" data-line={JSON.stringify(line)}></div>
           )}
         </div>
         <p className="challenge-copy">

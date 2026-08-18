@@ -10,9 +10,9 @@ type ChallengeSectionProps = {
 
 export default function ChallengeSection({ eyebrow, title, description, items }: ChallengeSectionProps) {
   return (
-    <section className="flex flex-col gap-4">
+    <section className="challenge-section">
       <SectionHeading eyebrow={eyebrow} title={title} description={description} />
-      <div className="grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-4">
+      <div className="card-grid">
         {items.map((item) => (
           <ChallengeCard key={item.to} {...item} />
         ))}

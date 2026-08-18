@@ -1,6 +1,16 @@
-@import './leetcode-level2-common.css';
+.qr-code-page textarea {
+  width: 100%;
+  min-height: 6.25rem;
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-input);
+  color: var(--color-content);
+  resize: vertical;
+}
 
-.qr-code-page {
-  display: grid;
-  gap: 1rem;
+.qr-code-page img {
+  max-width: 13.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
 }

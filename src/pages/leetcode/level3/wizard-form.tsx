@@ -49,7 +49,7 @@ export default function WizardFormPage() {
         <div className="wizard-bar">
           <div className="wizard-bar-fill" style={{ width: `${((step + 1) / 4) * 100}%` }} />
         </div>
-        <div className="level3-panel wizard-fields">
+        <div className="level-3-panel wizard-fields">
           {step === 0 ? (
             <label className="wizard-field">
               <span>Full Name</span>

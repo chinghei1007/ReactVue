@@ -21,12 +21,12 @@ export default function CounterPage() {
   return (
     <ChallengePage eyebrow="Level 1" title="The Classic Counter" summary="Increment, decrement, reset, and step control.">
       <div className="challenge-demo counter-demo">
-        <p className="challenge-metric">Count: {count}</p>
-        <label className="challenge-field">
+        <p className="challenge-metric counter-metric">Count: {count}</p>
+        <label className="challenge-field counter-field">
           Step size
           <input type="number" min="1" value={step} onChange={(event) => setStep(Math.max(1, Number(event.target.value) || 1))} />
         </label>
-        <div className="challenge-actions">
+        <div className="challenge-actions counter-actions">
           <button type="button" onClick={() => setCount((value) => value - step)}>
             - Decrement
           </button>

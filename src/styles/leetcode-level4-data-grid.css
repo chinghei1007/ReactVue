@@ -1,44 +1,39 @@
-.level4-shell {
-  display: grid;
-  gap: 1.5rem;
-}
-
-.grid-toolbar {
+.data-grid-toolbar {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
   align-items: center;
 }
 
-.grid-shell {
+.data-grid-shell {
   overflow: auto;
   border-radius: 20px;
-  border: 1px solid rgba(148, 163, 184, 0.35);
-  background: var(--surface);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
 }
 
-.grid-table {
+.data-grid-table {
   width: max-content;
   border-collapse: collapse;
 }
 
-.grid-table th,
-.grid-table td {
-  border-right: 1px solid rgba(148, 163, 184, 0.25);
-  border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+.data-grid-table th,
+.data-grid-table td {
+  border-right: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
   padding: 0;
 }
 
-.grid-header {
+.data-grid-header {
   position: relative;
   min-width: 120px;
   padding: 0.75rem 0.9rem;
   cursor: pointer;
   user-select: none;
-  background: var(--surface-2);
+  background: var(--color-surface-subtle);
 }
 
-.grid-resizer {
+.data-grid-resizer {
   position: absolute;
   top: 0;
   right: 0;
@@ -47,7 +42,7 @@
   cursor: col-resize;
 }
 
-.grid-cell {
+.data-grid-cell {
   width: 100%;
   min-height: 42px;
   border: 0;
@@ -56,7 +51,7 @@
   text-align: left;
 }
 
-.grid-cell:focus {
-  outline: 2px solid var(--theme-accent);
+.data-grid-cell:focus {
+  outline: 2px solid var(--color-accent);
   outline-offset: -2px;
 }

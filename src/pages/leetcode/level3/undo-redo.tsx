@@ -61,7 +61,7 @@ export default function UndoRedoPage() {
           <button type="button" onClick={redo} disabled={!history.future.length}>Redo</button>
           <button type="button" onClick={() => setHistory(initialHistory)}>Reset</button>
         </div>
-        <div className="undo-panel level3-panel">
+        <div className="undo-panel level-3-panel">
           <textarea value={history.present} onChange={(event) => updateValue(event.target.value)} />
         </div>
         <div className="undo-history">

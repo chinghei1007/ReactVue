@@ -25,7 +25,7 @@ export default function CarouselPage() {
           <button type="button" onClick={() => setPlaying((value) => !value)}>{playing ? 'Pause' : 'Play'}</button>
           <button type="button" onClick={() => setIndex((current) => (current + 1) % slides.length)}>Next</button>
         </div>
-        <div className="challenge-dots">
+        <div className="carousel-dots">
           {slides.map((slide, slideIndex) => (
             <button key={slide} type="button" aria-pressed={index === slideIndex} onClick={() => setIndex(slideIndex)}>
               {slideIndex + 1}

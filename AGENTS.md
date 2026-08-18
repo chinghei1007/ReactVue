@@ -4,7 +4,7 @@ Keep this file short. Read only what is needed for the task.
 
 ## Project Scope
 - Frontend only.
-- React + TypeScript + Vite + Tailwind.
+- React + TypeScript + Vite + vanilla CSS.
 - No backend, API routes, or database work.
 
 ## Implementation Rules
@@ -22,4 +22,3 @@ Keep this file short. Read only what is needed for the task.
 - Inspect only the files needed for the task.
 - Reuse existing components and data structures before creating new ones.
 - Run a build after meaningful changes.
-

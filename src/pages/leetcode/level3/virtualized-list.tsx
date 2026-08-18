@@ -28,14 +28,14 @@ export default function VirtualizedListPage() {
       title="Virtualized List"
       summary="Keep a 10,000 row list smooth by only rendering the items visible inside the scroll window."
     >
-      <div className="level3-shell">
-        <div className="level3-meta">
+      <div className="level-3-shell">
+        <div className="level-3-meta">
           <span>Rendering rows {startIndex + 1} - {endIndex} of {totalItems}</span>
           <span>{visibleItems.length} DOM nodes live</span>
         </div>
         <div className="virtual-shell">
           <div className="virtual-list" onScroll={(event) => setScrollTop(event.currentTarget.scrollTop)}>
-            <div style={{ height: totalItems * rowHeight, position: 'relative' }}>
+            <div className="virtual-spacer" style={{ height: totalItems * rowHeight }}>
               {visibleItems.map((item, index) => {
                 const itemIndex = startIndex + index
                 return (
