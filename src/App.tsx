@@ -3,8 +3,6 @@ import { useRoutes } from 'react-router-dom'
 import routes from '~react-pages'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-import OtherProjectDescription from '@/components/OtherProjectDescription'
-import { otherProjectDescription } from '@/data/other-project-description'
 import { useTheme } from '@/theme/ThemeContext'
 import '@/App.css'
 
@@ -24,7 +22,6 @@ export default function App() {
         </button>
         <main className="page-content">
           {useRoutes(routes)}
-          <OtherProjectDescription items={otherProjectDescription} />
         </main>
         <Footer />
       </div>
