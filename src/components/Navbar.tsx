@@ -81,6 +81,9 @@ const navItems: TopNavItem[] = [
           { label: 'AI Security Scanner for Python', to: '/nextwork/ai-security-scanner' },
         ],
       },
+      {
+        label: 'Design Tester', to: '/designTester'
+      }
     ],
   },{
     label: '書法比賽', to: 'calligraphy-competition'
