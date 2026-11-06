@@ -1,3 +1,4 @@
+import '@/styles/home.css'
 import ChallengeCard from '@/customElements/ChallengeCard'
 import SectionHeading from '@/customElements/SectionHeading'
 import FoldableChallengeSection from '@/customElements/FoldableChallengeSection'
@@ -11,7 +12,7 @@ export default function Home() {
         <div className="hero-copy"> {heroProfile.description.map((text, index) => ( <p key={index}>{text}</p> ))} </div>
       </section>
 
-      <section className="panel">
+      <section className="panel other-projects">
         <h2>Other Projects</h2>
         <div className="card-grid">
           <ChallengeCard title="AI Security Scanner for Python" description="" to="/nextwork/ai-security-scanner" action="View project" />
