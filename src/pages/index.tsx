@@ -1,3 +1,4 @@
+import ChallengeCard from '@/customElements/ChallengeCard'
 import SectionHeading from '@/customElements/SectionHeading'
 import FoldableChallengeSection from '@/customElements/FoldableChallengeSection'
 import { challengeSections, heroProfile } from '@/pages/leetcode/challenges'
@@ -8,10 +9,13 @@ export default function Home() {
       <section className="hero-panel">
         <SectionHeading eyebrow={heroProfile.eyebrow} title={heroProfile.title} />
         <div className="hero-copy"> {heroProfile.description.map((text, index) => ( <p key={index}>{text}</p> ))} </div>
-        <div className="hero-tags">
-          {heroProfile.tags.map((tag) => (
-            <span className="badge" key={tag}>{tag}</span>
-          ))}
+      </section>
+
+      <section className="panel">
+        <h2>Other Projects</h2>
+        <div className="card-grid">
+          <ChallengeCard title="AI Security Scanner for Python" description="" to="/nextwork/ai-security-scanner" action="View project" />
+          <ChallengeCard title="Design Tester" description="" to="/designTester" action="View project" />
         </div>
       </section>
 

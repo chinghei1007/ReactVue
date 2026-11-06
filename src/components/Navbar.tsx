@@ -93,12 +93,12 @@ const navItems: TopNavItem[] = [
 ]
 
 // --- Render helpers ---
-function renderSecondLevel(items: { label: string; to: string }[]) {
+function renderSecondLevel(items: { label: string; to: string }[], closeMenu: () => void) {
   return (
     <ul className="navbar-submenu">
       {items.map((sub) => (
         <li key={sub.label}>
-          <Link to={sub.to}>{sub.label}</Link>
+          <Link to={sub.to} onClick={closeMenu}>{sub.label}</Link>
         </li>
       ))}
     </ul>
@@ -109,6 +109,7 @@ function renderFirstLevel(
   items: SecondLevelItem[],
   openSubPanel: string | null,
   setOpenSubPanel: React.Dispatch<React.SetStateAction<string | null>>,
+  closeMenu: () => void,
 ) {
   return (
     <ul className="navbar-dropdown">
@@ -125,11 +126,11 @@ function renderFirstLevel(
                 {child.label}
               </button>
               <div className={`navbar-subpanel ${openSubPanel === child.label ? 'is-open' : ''}`}>
-                {renderSecondLevel(child.children)}
+                {renderSecondLevel(child.children, closeMenu)}
               </div>
             </>
           ) : (
-            <Link to={child.to}>{child.label}</Link>
+            <Link to={child.to} onClick={closeMenu}>{child.label}</Link>
           )}
         </li>
       ))}
@@ -142,6 +143,12 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const [openPanel, setOpenPanel] = useState<string | null>(null)
   const [openSubPanel, setOpenSubPanel] = useState<string | null>(null)
+
+  const closeMenu = () => {
+    setMobileOpen(false)
+    setOpenPanel(null)
+    setOpenSubPanel(null)
+  }
 
   return (
     <nav className="navbar">
@@ -191,7 +198,7 @@ export default function Navbar() {
                     {item.label}
                   </button>
                   <div className={`navbar-panel ${openPanel === item.label ? 'is-open' : ''}`}>
-                    {renderFirstLevel(item.children, openSubPanel, setOpenSubPanel)}
+                    {renderFirstLevel(item.children, openSubPanel, setOpenSubPanel, closeMenu)}
                   </div>
                 </>
               ) : (

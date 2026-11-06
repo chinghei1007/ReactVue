@@ -8,11 +8,9 @@ export type ChallengeSectionData = {
 }
 
 export const heroProfile = {
-  eyebrow: 'A testing Leetcode site',
-  title: 'Building a website with React, JavaScript, Vite, and Vanilla CSS',
-  description:
-    ['Using Navbar and footer as a component throughout the site, and providing Dark/Light mode support. Original thought is the integrate the site with CMS (Content Management System) like Strapi. However, the site does not require constant content changes or swapping.','Currently, this site is to experiment with styles, React auto-routing, and deployment to Cloudflare Pages. Wanted to try out Cloudflare deployment with databse support afterwards.'],
-  tags: ['React', 'JavaScript', 'Vite', 'Vanilla CSS', 'Strapi', 'Python + ML', 'Dify', 'RAG', 'Model Routing'],
+  eyebrow: 'Heison',
+  title: 'Junior developer exploring full-stack development',
+  description: ['I work on educational web applications and enjoy exploring how interfaces, backend services and AI tools fit together. This site brings together selected projects and small React experiments.'],
 }
 
 export const challengeSections: ChallengeSectionData[] = [
