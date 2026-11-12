@@ -2,24 +2,24 @@
 import { Link } from 'react-router-dom'
 import '@/components/Footer.css'
 
-const footerLinks = {
-  product: [
-    { label: 'Features', to: '/features' },
-    { label: 'Pricing', to: '/pricing' },
-    { label: 'Changelog', to: '/changelog' },
-    { label: 'Docs', to: '/docs' },
-  ],
-  // company: [
-  //   // { label: 'About', to: '/about' },
-  //   // { label: 'Blog', to: '/blog' },
-  //   // { label: 'Careers', to: '/careers' },
-  //   { label: 'youthsbdu@gmail.com' },
-  // ],
-  legal: [
-    { label: 'Privacy Policy', to: '/privacy' },
-    { label: 'Terms of Service', to: '/terms' },
-  ],
-}
+// const footerLinks = {
+//   product: [
+//     { label: 'Features', to: '/features' },
+//     { label: 'Pricing', to: '/pricing' },
+//     { label: 'Changelog', to: '/changelog' },
+//     { label: 'Docs', to: '/docs' },
+//   ],
+//   company: [
+//     // { label: 'About', to: '/about' },
+//     // { label: 'Blog', to: '/blog' },
+//     // { label: 'Careers', to: '/careers' },
+//     { label: 'youthsbdu@gmail.com' },
+//   ],
+//   legal: [
+//     { label: 'Privacy Policy', to: '/privacy' },
+//     { label: 'Terms of Service', to: '/terms' },
+//   ],
+// }
 
 export default function Footer() {
   const year = new Date().getFullYear()
