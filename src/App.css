@@ -204,6 +204,28 @@
   color: var(--color-content);
 }
 
+/* Shared dense data-table treatment. Individual tables can add their own
+   semantic borders and cell rules while keeping density consistent. */
+.table--compact {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.table--compact th,
+.table--compact td {
+  padding: var(--space-3);
+  line-height: 1.45;
+}
+
+@media (max-width: 640px) {
+  .table--compact th,
+  .table--compact td {
+    padding: var(--space-2) var(--space-3);
+    font-size: 0.8rem;
+  }
+}
+
 .challenge-section {
   display: flex;
   flex-direction: column;

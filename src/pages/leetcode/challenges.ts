@@ -9,8 +9,8 @@ export type ChallengeSectionData = {
 
 export const heroProfile = {
   eyebrow: 'Heison',
-  title: 'Junior developer exploring full-stack development',
-  description: ['I work on educational web applications and enjoy exploring how interfaces, backend services and AI tools fit together. This site brings together selected projects and small React experiments.'],
+  title: 'Part-time programmer building practical web and AI tools',
+  description: ['I work across React, Node.js, databases and AI tooling while helping maintain educational software used by schools. This site brings together selected projects, experiments and small challenges that show how I learn, test ideas and build end to end.'],
 }
 
 export const challengeSections: ChallengeSectionData[] = [

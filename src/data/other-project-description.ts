@@ -10,7 +10,7 @@ export const otherProjectDescriptions: Record<string, OtherProjectDescription> =
   'design-tester': {
     built: 'An education-themed design playground that helps designers, developers and customers explore school dashboard layouts together. Rendered previews give everyone a clearer picture of the design, while an exported App.css provides developers with a starting point.',
     learned: 'Turning choices such as color, typography and spacing into interactive controls made design decisions easier to explore and discuss. A shared preview also gives customers an opportunity to respond before implementation begins.',
-    improve: 'Refactoring the single-file implementation into reusable React components would make the project easier to maintain and extend. The exported CSS could also be made easier to adapt to different applications.',
+    improve: 'Rebuilding the single-file HTML into reusable React components to make the project easier to maintain and extend. The exported CSS could also be made easier to adapt to different applications.',
   },
   'ai-security-scanner': {
     built: 'An AI-assisted security scanner created to experiment with Groq and cloud services. It accepts source code for analysis and presents structured findings for users to review.',

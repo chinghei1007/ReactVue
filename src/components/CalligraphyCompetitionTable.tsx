@@ -34,7 +34,7 @@ const CalligraphyCompetitionTable: React.FC<CalligraphyCompetitionTableProps> = 
   return (
     <div className="competition-table-content">
       <div className="competition-table-scroll">
-        <table className="competition-table">
+        <table className="table--compact competition-table">
           <thead>
             <tr>
               <th onClick={() => handleSort('chineseName')}>
