@@ -17,6 +17,7 @@ export default function Home() {
         <div className="card-grid">
           <ChallengeCard title="AI Security Scanner for Python" description="" to="/nextwork/ai-security-scanner" action="View project" />
           <ChallengeCard title="Design Tester" description="" to="/designTester" action="View project" />
+          <ChallengeCard title="PDF Tools" description="" to="/pdfTools" action="View project" />
         </div>
       </section>
 

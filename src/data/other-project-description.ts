@@ -17,4 +17,9 @@ export const otherProjectDescriptions: Record<string, OtherProjectDescription> =
     learned: 'Connecting an AI provider with a database and bot protection offered practical experience of how different services fit together. Working within free plans also provided a chance to observe response times and service limits.',
     improve: 'Further work could focus on response times and how the application handles increased usage or service limits.',
   },
+  'pdf-tools': {
+    built: 'A browser-based PDF toolkit inspired by Weeny Software on Android. It brings two PDF engines together in one workspace, with tools for working with pages, text, metadata, annotations, images, forms and other common PDF tasks.',
+    learned: 'I started with an initial testing page to compare a smaller PDF library with a fuller one. The comparison turned into a useful lesson: each engine has its own strengths, so a shared interface and clear engine switch make more sense than trying to force everything through one library.',
+    improve: 'I would keep expanding the tool catalog and make the differences between the two engines easier to understand at a glance. More guided examples and a few extra end-to-end checks would also make the toolkit friendlier for first-time users.',
+  },
 }
