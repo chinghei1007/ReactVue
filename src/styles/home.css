@@ -16,17 +16,8 @@
   border-radius: 0;
 }
 
-.other-projects .card + .card {
-  border-left: 1px solid var(--color-border);
-}
-
 @media (max-width: 640px) {
   .other-projects .card-grid {
     grid-template-columns: 1fr;
-  }
-
-  .other-projects .card + .card {
-    border-left: 0;
-    border-top: 1px solid var(--color-border);
   }
 }

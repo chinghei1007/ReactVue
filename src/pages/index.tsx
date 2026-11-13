@@ -15,9 +15,9 @@ export default function Home() {
       <section className="panel other-projects">
         <h2>Other Projects</h2>
         <div className="card-grid">
-          <ChallengeCard title="AI Security Scanner for Python" description="" to="/nextwork/ai-security-scanner" action="View project" />
-          <ChallengeCard title="Design Tester" description="" to="/designTester" action="View project" />
-          <ChallengeCard title="PDF Tools" description="" to="/pdfTools" action="View project" />
+          <ChallengeCard title="AI Security Scanner for Python" description="Analyze Python code with AI-assisted security checks." to="/nextwork/ai-security-scanner" action="View project" />
+          <ChallengeCard title="Design Tester" description="Explore and compare education dashboard designs." to="/designTester" action="View project" />
+          <ChallengeCard title="PDF Tools" description="Work with PDFs through a dual-engine browser toolkit." to="/pdfTools" action="View project" />
         </div>
       </section>
 
